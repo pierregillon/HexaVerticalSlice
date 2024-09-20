@@ -1,0 +1,6 @@
+@HexaVerticalSlice_HostAddress = http://localhost:5111
+
+GET {{HexaVerticalSlice_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
