@@ -16,4 +16,8 @@
       <ProjectReference Include="..\HexaVerticalSlice.Api.BuildingBlocks\HexaVerticalSlice.Api.BuildingBlocks.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Domain\" />
+    </ItemGroup>
+
 </Project>

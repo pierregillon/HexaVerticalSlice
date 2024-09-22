@@ -1,5 +1,5 @@
 using FluentAssertions.Extensions;
-using HexaVerticalSlice.BC.FeedDisplay.Domain;
+using HexaVerticalSlice.Api.BuildingBlocks.Time;
 using HexaVerticalSlice.BC.FeedDisplay.Tests.Acceptance.Configuration;
 using HexaVerticalSlice.BC.FeedDisplay.Tests.Acceptance.Utils;
 using NSubstitute;

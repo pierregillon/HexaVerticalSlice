@@ -1,4 +1,4 @@
-﻿using HexaVerticalSlice.BC.FeedDisplay.Domain;
+﻿using HexaVerticalSlice.Api.BuildingBlocks.Time;
 using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
 using Reqnroll;

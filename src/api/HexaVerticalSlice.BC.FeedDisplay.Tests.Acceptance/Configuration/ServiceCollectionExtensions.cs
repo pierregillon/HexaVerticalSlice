@@ -1,4 +1,5 @@
-﻿using HexaVerticalSlice.BC.FeedDisplay.Infra;
+﻿using HexaVerticalSlice.BC.AccountManagement.Infra.Database;
+using HexaVerticalSlice.BC.FeedDisplay.Infra;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,9 +20,9 @@ public static class ServiceCollectionExtensions
             options.ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning));
         });
 
-        services.RemoveWhere(x => x.ServiceType == typeof(DbContextOptions<FeedDisplayDbContext>));
+        services.RemoveWhere(x => x.ServiceType == typeof(DbContextOptions<AccountManagementDbContext>));
 
-        services.AddDbContext<FeedDisplayDbContext>(options =>
+        services.AddDbContext<AccountManagementDbContext>(options =>
         {
             options.UseInMemoryDatabase(databaseName);
             options.ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning));

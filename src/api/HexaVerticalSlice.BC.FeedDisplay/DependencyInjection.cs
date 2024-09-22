@@ -9,7 +9,7 @@ public static class DependencyInjection
 {
     private static readonly Assembly CurrentBoundedContextAssembly = typeof(DependencyInjection).Assembly;
 
-    public static IServiceCollection RegisterFeedDisplayBoundedContext(
+    public static IServiceCollection RegisterFeedDisplay(
         this IServiceCollection services, 
         Action<MediatRServiceConfiguration>? action = null
     )

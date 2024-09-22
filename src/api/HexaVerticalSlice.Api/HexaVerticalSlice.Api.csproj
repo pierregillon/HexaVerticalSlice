@@ -14,7 +14,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\HexaVerticalSlice.BC.AccountManagement\HexaVerticalSlice.BC.AccountManagement.csproj" />
       <ProjectReference Include="..\HexaVerticalSlice.BC.FeedDisplay\HexaVerticalSlice.BC.FeedDisplay.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Controllers\" />
     </ItemGroup>
 
 </Project>

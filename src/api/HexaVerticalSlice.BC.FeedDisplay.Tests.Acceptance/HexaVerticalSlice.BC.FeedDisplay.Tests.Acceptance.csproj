@@ -46,7 +46,19 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="Features\ConnectWithAnotherUser.feature" />
       <Content Include="Features\GetFeed.feature" />
+      <Content Include="Features\LoginToMyAccount.feature" />
+      <Content Include="Features\RegisterNewUser.feature" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Features\ConnectWithAnotherUser.feature.cs">
+        <DependentUpon>ConnectWithAnotherUser.feature</DependentUpon>
+        <AutoGen>true</AutoGen>
+        <DesignTime>true</DesignTime>
+        <Visible>true</Visible>
+      </Compile>
     </ItemGroup>
 
 </Project>
