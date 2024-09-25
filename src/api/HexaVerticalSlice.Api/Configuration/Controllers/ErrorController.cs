@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 
-namespace HexaVerticalSlice.Controllers.Controllers;
+namespace HexaVerticalSlice.Configuration.Controllers;
 
 [ApiController]
 [AllowAnonymous]

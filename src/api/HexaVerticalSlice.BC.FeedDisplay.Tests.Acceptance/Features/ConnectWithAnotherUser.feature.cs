@@ -82,7 +82,10 @@ namespace HexaVerticalSlice.BC.FeedDisplay.Tests.Acceptance.Features
 #line 6
 #line hidden
 #line 7
-    await testRunner.GivenAsync("I am registered and logged as user1@test.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+    await testRunner.GivenAsync("I am registered and logged in as john@company.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 8
+    await testRunner.AndAsync("emma@company.com has registered", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
         }
         
@@ -96,15 +99,17 @@ namespace HexaVerticalSlice.BC.FeedDisplay.Tests.Acceptance.Features
             await this.TestTearDownAsync();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="A request to connect with another user is listed in invitations")]
+        [Xunit.SkippableFactAttribute(DisplayName="Cannot connect with an unknown user")]
         [Xunit.TraitAttribute("FeatureTitle", "Connect with another user")]
-        [Xunit.TraitAttribute("Description", "A request to connect with another user is listed in invitations")]
-        public async System.Threading.Tasks.Task ARequestToConnectWithAnotherUserIsListedInInvitations()
+        [Xunit.TraitAttribute("Description", "Cannot connect with an unknown user")]
+        [Xunit.TraitAttribute("Category", "ErrorHandling")]
+        public async System.Threading.Tasks.Task CannotConnectWithAnUnknownUser()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "ErrorHandling"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("A request to connect with another user is listed in invitations", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 9
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Cannot connect with an unknown user", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -117,30 +122,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 await this.FeatureBackgroundAsync();
 #line hidden
-#line 10
-    await testRunner.WhenAsync("I request to connect with user2@test.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line 12
+    await testRunner.WhenAsync("I request to connect with an unknown user", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-                global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
-                            "User",
-                            "Request date"});
-                table1.AddRow(new string[] {
-                            "user2@test.com",
-                            "Today"});
-#line 11
-    await testRunner.ThenAsync("the invitations list is", ((string)(null)), table1, "Then ");
+#line 13
+    await testRunner.ThenAsync("an not found error occurred", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Once a request is accepted, the invitation is removed from the list")]
+        [Xunit.SkippableFactAttribute(DisplayName="By default, my invitations list is empty")]
         [Xunit.TraitAttribute("FeatureTitle", "Connect with another user")]
-        [Xunit.TraitAttribute("Description", "Once a request is accepted, the invitation is removed from the list")]
-        public async System.Threading.Tasks.Task OnceARequestIsAcceptedTheInvitationIsRemovedFromTheList()
+        [Xunit.TraitAttribute("Description", "By default, my invitations list is empty")]
+        public async System.Threading.Tasks.Task ByDefaultMyInvitationsListIsEmpty()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Once a request is accepted, the invitation is removed from the list", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("By default, my invitations list is empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -154,17 +153,88 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 await this.FeatureBackgroundAsync();
 #line hidden
+                global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
+                            "Invited profile",
+                            "Request date"});
 #line 16
-    await testRunner.GivenAsync("I requested to connect with user2@test.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+    await testRunner.ThenAsync("my invitations list is", ((string)(null)), table1, "Then ");
 #line hidden
-#line 17
-    await testRunner.WhenAsync("the user user2@test.com accepts my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="A request to connect with another user is listed")]
+        [Xunit.TraitAttribute("FeatureTitle", "Connect with another user")]
+        [Xunit.TraitAttribute("Description", "A request to connect with another user is listed")]
+        public async System.Threading.Tasks.Task ARequestToConnectWithAnotherUserIsListed()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("A request to connect with another user is listed", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 19
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 6
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 20
+    await testRunner.GivenAsync("the current date is 2024-09-25", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 21
+    await testRunner.WhenAsync("I request to connect with emma@company.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table2 = new global::Reqnroll.Table(new string[] {
+                            "Invited profile",
+                            "Request date"});
+                table2.AddRow(new string[] {
+                            "emma@company.com",
+                            "2024-09-25"});
+#line 22
+    await testRunner.ThenAsync("my invitations list is", ((string)(null)), table2, "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Once a request is accepted, the invitation is removed from the list")]
+        [Xunit.TraitAttribute("FeatureTitle", "Connect with another user")]
+        [Xunit.TraitAttribute("Description", "Once a request is accepted, the invitation is removed from the list")]
+        public async System.Threading.Tasks.Task OnceARequestIsAcceptedTheInvitationIsRemovedFromTheList()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Once a request is accepted, the invitation is removed from the list", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 26
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 6
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 27
+    await testRunner.GivenAsync("I requested to connect with user2@test.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 28
+    await testRunner.WhenAsync("emma@company.com accepts my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table3 = new global::Reqnroll.Table(new string[] {
                             "User",
                             "Added date"});
-#line 18
-    await testRunner.ThenAsync("the invitations list is", ((string)(null)), table2, "Then ");
+#line 29
+    await testRunner.ThenAsync("my invitations list is", ((string)(null)), table3, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -178,7 +248,7 @@ await this.FeatureBackgroundAsync();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Once a request is accepted, the user is added in my network", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 21
+#line 32
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -191,20 +261,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 await this.FeatureBackgroundAsync();
 #line hidden
-#line 22
+#line 33
+    await testRunner.GivenAsync("the current date is 2024-09-22", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 34
     await testRunner.WhenAsync("I request to connect with user2@test.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 23
-    await testRunner.AndAsync("the user user2@test.com accepts my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 35
+    await testRunner.AndAsync("emma@company.com accepts my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table3 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table4 = new global::Reqnroll.Table(new string[] {
                             "User",
                             "Added date"});
-                table3.AddRow(new string[] {
-                            "user2@test.com",
-                            "Today"});
-#line 24
-    await testRunner.ThenAsync("my network is", ((string)(null)), table3, "Then ");
+                table4.AddRow(new string[] {
+                            "emma@test.com",
+                            "2024-09-22"});
+#line 36
+    await testRunner.ThenAsync("my connections are", ((string)(null)), table4, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

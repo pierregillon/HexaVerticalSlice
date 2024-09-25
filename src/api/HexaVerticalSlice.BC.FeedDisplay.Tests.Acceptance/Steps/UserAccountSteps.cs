@@ -24,11 +24,20 @@ public class UserAccountSteps(TestClient client, TestApplication application) : 
         Client.DefineToken(email, token.Token);
     }
 
+    [Given(@"(.*) has registered")]
     [When(@"I register with email ""(.*)""")]
     public async Task WhenIRegisterWithEmail(string emailAddress) => await Register(emailAddress, "test");
 
     [When(@"I register with password ""(.*)""")]
     public async Task WhenIRegisterWithPassword(string password) => await Register("test@test.fr", password);
+    
+    [Given(@"I am registered and logged in as (.*)")]
+    public async Task GivenIAmRegisteredAndLoggedInAs(string emailAddress)
+    {
+        var token = await Register(emailAddress, "test");
+        
+        Client.DefineToken(emailAddress, token.Token);
+    }
 
     [Given(@"I am registered and logged in with")]
     [When(@"I register and log in with")]

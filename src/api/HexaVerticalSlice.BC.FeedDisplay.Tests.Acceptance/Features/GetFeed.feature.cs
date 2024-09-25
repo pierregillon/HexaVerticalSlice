@@ -82,7 +82,7 @@ namespace HexaVerticalSlice.BC.FeedDisplay.Tests.Acceptance.Features
 #line 6
 #line hidden
 #line 7
-    await testRunner.GivenAsync("I am registered and logged as user1@test.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+    await testRunner.GivenAsync("I am registered and logged in as user1@test.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
         }
         
@@ -122,54 +122,6 @@ await this.FeatureBackgroundAsync();
 #line hidden
 #line 11
     await testRunner.ThenAsync("the feed is empty", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [Xunit.SkippableFactAttribute(DisplayName="A first level network post is visible in my feed")]
-        [Xunit.TraitAttribute("FeatureTitle", "Get feed")]
-        [Xunit.TraitAttribute("Description", "A first level network post is visible in my feed")]
-        public async System.Threading.Tasks.Task AFirstLevelNetworkPostIsVisibleInMyFeed()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("A first level network post is visible in my feed", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 13
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 6
-await this.FeatureBackgroundAsync();
-#line hidden
-#line 14
-    await testRunner.GivenAsync("I requested user2@test.com to connect with me", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 15
-    await testRunner.AndAsync("user2@test.com accepted my connection request", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 16
-    await testRunner.WhenAsync("use2@test.com write a post with title \"My first post\" and content \"This is my fir" +
-                        "st post\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-                global::Reqnroll.Table table4 = new global::Reqnroll.Table(new string[] {
-                            "Author",
-                            "Date",
-                            "Title",
-                            "Content"});
-                table4.AddRow(new string[] {
-                            "user2",
-                            "",
-                            "My first post",
-                            "This is my first post"});
-#line 17
-    await testRunner.ThenAsync("my feed contains the following posts:", ((string)(null)), table4, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

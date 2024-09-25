@@ -127,17 +127,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 await this.FeatureBackgroundAsync();
 #line hidden
-                global::Reqnroll.Table table5 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table7 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "Email address",
                             string.Format("{0}", invalidEmail)});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "Password",
                             "P@ssword!"});
 #line 12
-    await testRunner.WhenAsync("I log in with", ((string)(null)), table5, "When ");
+    await testRunner.WhenAsync("I log in with", ((string)(null)), table7, "When ");
 #line hidden
 #line 16
     await testRunner.ThenAsync("a bad request error occurred with type BadEmailAddressFormat and message \"The pro" +
@@ -170,17 +170,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 await this.FeatureBackgroundAsync();
 #line hidden
-                global::Reqnroll.Table table6 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table8 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Email address",
                             "unknown@test.com"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Password",
                             "P@ssword!"});
 #line 25
-    await testRunner.WhenAsync("I log in with", ((string)(null)), table6, "When ");
+    await testRunner.WhenAsync("I log in with", ((string)(null)), table8, "When ");
 #line hidden
 #line 29
     await testRunner.ThenAsync("an unauthorized error occurred with type LoginFailed and message \"Incorrect user " +
@@ -213,29 +213,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 await this.FeatureBackgroundAsync();
 #line hidden
-                global::Reqnroll.Table table7 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table9 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
-                table7.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "Email address",
                             "john.doe@mycompany.com"});
-                table7.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "Password",
                             "P@ssw0rd!"});
 #line 33
-    await testRunner.GivenAsync("I am registered with", ((string)(null)), table7, "Given ");
+    await testRunner.GivenAsync("I am registered with", ((string)(null)), table9, "Given ");
 #line hidden
-                global::Reqnroll.Table table8 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table10 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
-                table8.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "Email address",
                             "john.doe@mycompany.com"});
-                table8.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "Password",
                             "P@ssword!!!!!"});
 #line 37
-    await testRunner.WhenAsync("I log in with", ((string)(null)), table8, "When ");
+    await testRunner.WhenAsync("I log in with", ((string)(null)), table10, "When ");
 #line hidden
 #line 41
     await testRunner.ThenAsync("an unauthorized error occurred with type LoginFailed and message \"Incorrect user " +
@@ -266,29 +266,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 await this.FeatureBackgroundAsync();
 #line hidden
-                global::Reqnroll.Table table9 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table11 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
-                table9.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "Email address",
                             "john.doe@mycompany.com"});
-                table9.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "Password",
                             "P@ssw0rd!"});
 #line 44
-    await testRunner.GivenAsync("I am registered with", ((string)(null)), table9, "Given ");
+    await testRunner.GivenAsync("I am registered with", ((string)(null)), table11, "Given ");
 #line hidden
-                global::Reqnroll.Table table10 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table12 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
-                table10.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "Email address",
                             "john.doe@mycompany.com"});
-                table10.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "Password",
                             "P@ssw0rd!"});
 #line 48
-     await testRunner.WhenAsync("I log in with", ((string)(null)), table10, "When ");
+     await testRunner.WhenAsync("I log in with", ((string)(null)), table12, "When ");
 #line hidden
 #line 52
     await testRunner.ThenAsync("I can now use the app until the 2024-10-10", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");

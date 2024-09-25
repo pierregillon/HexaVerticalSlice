@@ -1,8 +1,9 @@
+using HexaVerticalSlice.Api.BuildingBlocks.Events;
 using HexaVerticalSlice.BC.AccountManagement.Domain;
 
 namespace HexaVerticalSlice.BC.AccountManagement.Infra.Database;
 
-internal class SqlUserAccountRepository(AccountManagementDbContext dbContext)
+internal class SqlUserAccountRepository(AccountManagementDbContext dbContext, IDomainEventPublisher publisher)
     : IUserAccountRepository
 {
     public async Task Save(UserAccount userAccount)
@@ -15,9 +16,13 @@ internal class SqlUserAccountRepository(AccountManagementDbContext dbContext)
 
         await dbContext.Users.AddAsync(new UserAccountEntity
         {
-            Id = userAccount.AccountId, 
+            Id = userAccount.AccountId,
             EmailAddress = userAccount.EmailAddress,
             PasswordHash = userAccount.PasswordHash
         });
+
+        await publisher.Publish(userAccount.UncommittedChanges);
+
+        userAccount.MarkAsCommitted();
     }
 }

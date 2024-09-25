@@ -13,6 +13,15 @@ public class TestClient(ScenarioContext context, ErrorDriver errorDriver)
 
     private HttpClient HttpClient => context.Get<HttpClient>();
 
+    public async Task PostVoid(string path, object body) =>
+        await errorDriver.TryExecute(
+            async () =>
+            {
+                var response = await HttpClient.PostAsync(path, ToStringContent(body));
+
+                await ProcessError(path, response);
+            });
+
     public async Task<Guid> Post(string path, object body) =>
         await errorDriver.TryExecute(
             async () =>
@@ -49,19 +58,22 @@ public class TestClient(ScenarioContext context, ErrorDriver errorDriver)
             }
         );
 
-    public async Task<T> Get<T>(string path)
-    {
-        var json = await HttpClient.GetStringAsync(path);
+    public async Task<T> Get<T>(string path) =>
+        await errorDriver.TryExecute(
+            async () =>
+            {
+                var json = await HttpClient.GetStringAsync(path);
 
-        return Deserialize<T>(json);
-    }
+                return Deserialize<T>(json);
+            }
+        );
 
     private static T Deserialize<T>(string json)
     {
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
-        return JsonSerializer.Deserialize<T>(json, options) ??
-               throw new InvalidOperationException($"Unable to deserialize the response to {typeof(T)}");
+        return JsonSerializer.Deserialize<T>(json, options)
+            ?? throw new InvalidOperationException($"Unable to deserialize the response to {typeof(T)}");
     }
 
     private static StringContent ToStringContent(object body)

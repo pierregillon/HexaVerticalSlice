@@ -33,17 +33,20 @@ public class ErrorDriver(ScenarioInfo scenarioInfo)
         {
             return await action();
         }
-        else
+
+        try
         {
-            try
-            {
-                return await action();
-            }
-            catch (HttpException ex)
-            {
-                _errors.Enqueue(new HttpError(ex));
-                return default!;
-            }
+            return await action();
+        }
+        catch (HttpRequestException ex)
+        {
+            _errors.Enqueue(new HttpError(HttpException.From("", ex.StatusCode ?? 0)));
+            return default!;
+        }
+        catch (HttpException ex)
+        {
+            _errors.Enqueue(new HttpError(ex));
+            return default!;
         }
     }
 
@@ -61,7 +64,8 @@ public class ErrorDriver(ScenarioInfo scenarioInfo)
     {
         if (_errors.Any())
         {
-            throw new ReqnrollException("An error occurred during scenario but has not be processed.", _errors.Dequeue().InnerException);
+            throw new ReqnrollException("An error occurred during scenario but has not be processed.",
+                _errors.Dequeue().InnerException);
         }
     }
 }

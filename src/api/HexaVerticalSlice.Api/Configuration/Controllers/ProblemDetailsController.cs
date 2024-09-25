@@ -1,9 +1,9 @@
-﻿using HexaVerticalSlice.Api.BuildingBlocks.Exceptions;
+﻿using HexaVerticalSlice.Api.BuildingBlocks;
+using HexaVerticalSlice.Api.BuildingBlocks.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using HexaVerticalSlice.Api.BuildingBlocks;
 
-namespace HexaVerticalSlice.Controllers.Controllers;
+namespace HexaVerticalSlice.Configuration.Controllers;
 
 public abstract class ProblemDetailsController(
     ProblemDetailsFactory factory,

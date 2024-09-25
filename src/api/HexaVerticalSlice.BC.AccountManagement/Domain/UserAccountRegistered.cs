@@ -1,4 +1,4 @@
-using HexaVerticalSlice.Api.BuildingBlocks.Aggregates;
+using HexaVerticalSlice.Api.BuildingBlocks.Events;
 using HexaVerticalSlice.BC.AccountManagement.Domain.Security;
 
 namespace HexaVerticalSlice.BC.AccountManagement.Domain;

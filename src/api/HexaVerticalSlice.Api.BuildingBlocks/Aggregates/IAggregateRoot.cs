@@ -1,3 +1,5 @@
+using HexaVerticalSlice.Api.BuildingBlocks.Events;
+
 namespace HexaVerticalSlice.Api.BuildingBlocks.Aggregates;
 
 public interface IAggregateRoot<TId>
