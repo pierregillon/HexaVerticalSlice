@@ -9,4 +9,6 @@ public class ProfileEntity
     [Key] public Guid Id { get; set; }
     public string EmailAddress { get; set; } = string.Empty;
     public Guid UserAccountId { get; set; }
+
+    public virtual ICollection<ConnectionEntity> Connections { get; set; } = default!;
 }

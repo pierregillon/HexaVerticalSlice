@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using HexaVerticalSlice.Api.BuildingBlocks.Cqrs.Commands;
-using HexaVerticalSlice.BC.FeedDisplay.Features.SearchForProfile;
+using HexaVerticalSlice.BC.FeedDisplay.Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,8 +18,8 @@ public class InviteController(ICommandDispatcher dispatcher)
     {
         var command = new InviteCommand(ProfileId.Rehydrate(profileId));
 
-        await dispatcher.Dispatch(command);
+        var invitationId = await dispatcher.Dispatch(command);
 
-        return Ok();
+        return Ok(invitationId.Value);
     }
 }

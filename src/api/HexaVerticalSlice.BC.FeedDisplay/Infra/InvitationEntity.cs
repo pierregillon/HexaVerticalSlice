@@ -10,4 +10,5 @@ public class InvitationEntity
     public Guid SenderId { get; set; }
     public Guid TargetId { get; set; }
     public DateTime RequestDate { get; set; }
+    public bool IsAccepted { get; set; }
 }

@@ -11,10 +11,9 @@ public class InviteCommandHandler(
     IProfileRepository profileRepository,
     IRepository<Invitation, InvitationId> invitationRepository,
     IClock clock
-)
-    : ICommandHandler<InviteCommand>
+) : ICommandHandler<InviteCommand, InvitationId>
 {
-    public async Task Handle(InviteCommand command)
+    public async Task<InvitationId> Handle(InviteCommand command)
     {
         var sender = await profileRepository.Get(currentTenant.GetCurrentUserId());
         var target = await profileRepository.Get(command.ProfileId);
@@ -22,5 +21,7 @@ public class InviteCommandHandler(
         var invitation = sender.Invite(target, clock.Now());
 
         await invitationRepository.Save(invitation);
+
+        return invitation.Id;
     }
 }

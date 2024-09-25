@@ -14,7 +14,7 @@ public class ListInvitationsController(IQueryDispatcher dispatcher)
     [ProducesResponseType(typeof(IReadOnlyCollection<InvitationDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> List()
     {
-        var query = new ListInvitationsCommand();
+        var query = new ListInvitationsQuery();
 
         var results = await dispatcher.Dispatch(query);
 

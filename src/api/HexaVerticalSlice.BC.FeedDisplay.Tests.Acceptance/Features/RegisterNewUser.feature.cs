@@ -206,17 +206,17 @@ await this.FeatureBackgroundAsync();
 #line 34
     await testRunner.GivenAsync("the token validity is 90 days", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table13 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table14 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
-                table13.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Email address",
                             "john.doe@mycompany.com"});
-                table13.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Password",
                             "P@ssw0rd!"});
 #line 35
-    await testRunner.WhenAsync("I register and log in with", ((string)(null)), table13, "When ");
+    await testRunner.WhenAsync("I register and log in with", ((string)(null)), table14, "When ");
 #line hidden
 #line 39
     await testRunner.ThenAsync("I can now use the app until the 2023-01-21", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
@@ -246,18 +246,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 await this.FeatureBackgroundAsync();
 #line hidden
-                global::Reqnroll.Table table14 = new global::Reqnroll.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table14.AddRow(new string[] {
-                            "Email address",
-                            "john.doe@mycompany.com"});
-                table14.AddRow(new string[] {
-                            "Password",
-                            "P@ssw0rd!"});
-#line 42
-    await testRunner.GivenAsync("I am registered with", ((string)(null)), table14, "Given ");
-#line hidden
                 global::Reqnroll.Table table15 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
@@ -267,8 +255,20 @@ await this.FeatureBackgroundAsync();
                 table15.AddRow(new string[] {
                             "Password",
                             "P@ssw0rd!"});
+#line 42
+    await testRunner.GivenAsync("I am registered with", ((string)(null)), table15, "Given ");
+#line hidden
+                global::Reqnroll.Table table16 = new global::Reqnroll.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table16.AddRow(new string[] {
+                            "Email address",
+                            "john.doe@mycompany.com"});
+                table16.AddRow(new string[] {
+                            "Password",
+                            "P@ssw0rd!"});
 #line 46
-     await testRunner.WhenAsync("I log in with", ((string)(null)), table15, "When ");
+     await testRunner.WhenAsync("I log in with", ((string)(null)), table16, "When ");
 #line hidden
 #line 50
     await testRunner.ThenAsync("I can now use the app until the 2023-01-21", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");

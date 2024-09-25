@@ -24,15 +24,23 @@ Scenario: A request to connect with another user is listed
       | emma@company.com | 2024-09-25   |
 
 Scenario: Once a request is accepted, the invitation is removed from the list
-    Given I requested to connect with user2@test.com
+    Given I requested to connect with emma@company.com
     When emma@company.com accepts my invitation
     Then my invitations list is
-      | User | Added date |
+      | User | Request date |
 
 Scenario: Once a request is accepted, the user is added in my network
     Given the current date is 2024-09-22
-    When I request to connect with user2@test.com
+    When I request to connect with emma@company.com
     And emma@company.com accepts my invitation
     Then my connections are
       | User          | Added date |
       | emma@test.com | 2024-09-22 |
+
+Scenario: Once a request is accepted, I am added in the network of the user
+    Given the current date is 2024-09-22
+    When I request to connect with emma@company.com
+    And emma@company.com accepts my invitation
+    Then emma@company.com's connections are
+      | User             | Added date |
+      | john@company.com | 2024-09-22 |

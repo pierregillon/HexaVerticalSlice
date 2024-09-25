@@ -12,30 +12,31 @@ namespace HexaVerticalSlice.BC.FeedDisplay.Tests.Acceptance.Steps;
 [Binding]
 public class UserAccountSteps(TestClient client, TestApplication application) : StepBase(client, application)
 {
+    public const string DefaultPassword = "test";
     private JwtToken? _token;
 
     [Given(@"I am registered and log in")]
     public async Task GivenIAmRegisteredAndLogIn()
     {
         var email = $"{Guid.NewGuid()}@test.com";
-        
-        var token = await Register(email, "test");
-        
+
+        var token = await Register(email, DefaultPassword);
+
         Client.DefineToken(email, token.Token);
     }
 
     [Given(@"(.*) has registered")]
     [When(@"I register with email ""(.*)""")]
-    public async Task WhenIRegisterWithEmail(string emailAddress) => await Register(emailAddress, "test");
+    public async Task WhenIRegisterWithEmail(string emailAddress) => await Register(emailAddress, DefaultPassword);
 
     [When(@"I register with password ""(.*)""")]
     public async Task WhenIRegisterWithPassword(string password) => await Register("test@test.fr", password);
-    
+
     [Given(@"I am registered and logged in as (.*)")]
     public async Task GivenIAmRegisteredAndLoggedInAs(string emailAddress)
     {
-        var token = await Register(emailAddress, "test");
-        
+        var token = await Register(emailAddress, DefaultPassword);
+
         Client.DefineToken(emailAddress, token.Token);
     }
 
@@ -66,7 +67,7 @@ public class UserAccountSteps(TestClient client, TestApplication application) : 
         if (token is not null)
         {
             Client.DefineToken(data.EmailAddress, token.Token);
-        
+
             _token = token;
         }
     }

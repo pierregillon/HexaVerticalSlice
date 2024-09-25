@@ -1,6 +1,6 @@
 using HexaVerticalSlice.Api.BuildingBlocks.Aggregates;
 
-namespace HexaVerticalSlice.BC.FeedDisplay.Features.SearchForProfile;
+namespace HexaVerticalSlice.BC.FeedDisplay.Domain;
 
 public record ProfileId(Guid Value) : IAggregateId
 {

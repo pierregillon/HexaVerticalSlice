@@ -156,14 +156,14 @@ await this.FeatureBackgroundAsync();
 #line 16
     await testRunner.WhenAsync("I search for eric@company.com profile", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-                global::Reqnroll.Table table5 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table6 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
-                table5.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "Email address",
                             "eric@company.com"});
 #line 17
-    await testRunner.ThenAsync("the profile details are", ((string)(null)), table5, "Then ");
+    await testRunner.ThenAsync("the profile details are", ((string)(null)), table6, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -193,14 +193,14 @@ await this.FeatureBackgroundAsync();
 #line 22
     await testRunner.WhenAsync("I search for john@company.com profile", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-                global::Reqnroll.Table table6 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table7 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
-                table6.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "Email address",
                             "john@company.com"});
 #line 23
-    await testRunner.ThenAsync("the profile details are", ((string)(null)), table6, "Then ");
+    await testRunner.ThenAsync("the profile details are", ((string)(null)), table7, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

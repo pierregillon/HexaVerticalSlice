@@ -225,14 +225,14 @@ this.ScenarioInitialize(scenarioInfo);
 await this.FeatureBackgroundAsync();
 #line hidden
 #line 27
-    await testRunner.GivenAsync("I requested to connect with user2@test.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+    await testRunner.GivenAsync("I requested to connect with emma@company.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 28
     await testRunner.WhenAsync("emma@company.com accepts my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table3 = new global::Reqnroll.Table(new string[] {
                             "User",
-                            "Added date"});
+                            "Request date"});
 #line 29
     await testRunner.ThenAsync("my invitations list is", ((string)(null)), table3, "Then ");
 #line hidden
@@ -265,7 +265,7 @@ await this.FeatureBackgroundAsync();
     await testRunner.GivenAsync("the current date is 2024-09-22", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 34
-    await testRunner.WhenAsync("I request to connect with user2@test.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+    await testRunner.WhenAsync("I request to connect with emma@company.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 35
     await testRunner.AndAsync("emma@company.com accepts my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -278,6 +278,49 @@ await this.FeatureBackgroundAsync();
                             "2024-09-22"});
 #line 36
     await testRunner.ThenAsync("my connections are", ((string)(null)), table4, "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Once a request is accepted, I am added in the network of the user")]
+        [Xunit.TraitAttribute("FeatureTitle", "Connect with another user")]
+        [Xunit.TraitAttribute("Description", "Once a request is accepted, I am added in the network of the user")]
+        public async System.Threading.Tasks.Task OnceARequestIsAcceptedIAmAddedInTheNetworkOfTheUser()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Once a request is accepted, I am added in the network of the user", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 40
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 6
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 41
+    await testRunner.GivenAsync("the current date is 2024-09-22", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 42
+    await testRunner.WhenAsync("I request to connect with emma@company.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 43
+    await testRunner.AndAsync("emma@company.com accepts my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table5 = new global::Reqnroll.Table(new string[] {
+                            "User",
+                            "Added date"});
+                table5.AddRow(new string[] {
+                            "john@company.com",
+                            "2024-09-22"});
+#line 44
+    await testRunner.ThenAsync("emma@company.com\'s connections are", ((string)(null)), table5, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
