@@ -1,20 +1,16 @@
 ﻿using System.Reflection;
 using HexaVerticalSlice.Api.BuildingBlocks.Cqrs;
 using HexaVerticalSlice.Api.BuildingBlocks.Events;
-using HexaVerticalSlice.Api.BuildingBlocks.Time;
-using HexaVerticalSlice.BC.AccountManagement.Features.AccountExists;
-using HexaVerticalSlice.BC.AccountManagement.Features.Login;
-using HexaVerticalSlice.BC.AccountManagement.Features.Register;
-using HexaVerticalSlice.BC.AccountManagement.Infra;
+using HexaVerticalSlice.BC.Networking.Infra;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
-namespace HexaVerticalSlice.BC.AccountManagement;
+namespace HexaVerticalSlice.BC.Networking;
 
 public static class DependencyInjection
 {
     private static readonly Assembly CurrentBoundedContextAssembly = typeof(DependencyInjection).Assembly;
 
-    public static IServiceCollection RegisterAccountManagementBoundedContext(
+    public static IServiceCollection RegisterNetworkingBoundedContext(
         this IServiceCollection services,
         Action<MediatRServiceConfiguration> action
     )
@@ -27,14 +23,9 @@ public static class DependencyInjection
 
         services
             .AddCqrs(action, CurrentBoundedContextAssembly)
-            .AddTime()
-            .AddDomainEventPublishing(CurrentBoundedContextAssembly)
-            .AddSharedInfrastructure();
+            .AddDomainEventPublishing(CurrentBoundedContextAssembly);
 
-        services
-            .AddLoginUseCase()
-            .AddRegisterUseCase()
-            .AddAccountExistsUseCase();
+        services.AddSharedInfrastructure();
 
         return services;
     }

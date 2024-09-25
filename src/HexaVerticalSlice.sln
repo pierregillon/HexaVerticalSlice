@@ -2,17 +2,15 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.Api", "api\HexaVerticalSlice.Api\HexaVerticalSlice.Api.csproj", "{1530C240-32E3-4113-9D87-6F0BA0D7906A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.ProfileEdition", "api\HexaVerticalSlice.BC.ProfileEdition\HexaVerticalSlice.BC.ProfileEdition.csproj", "{2E03B026-8352-4501-8148-77EF7CB07DE4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.FeedDisplay", "api\HexaVerticalSlice.BC.FeedDisplay\HexaVerticalSlice.BC.FeedDisplay.csproj", "{A08D626B-B398-4B74-B55C-DC3760FB98BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.Networking", "api\HexaVerticalSlice.BC.Networking\HexaVerticalSlice.BC.Networking.csproj", "{A08D626B-B398-4B74-B55C-DC3760FB98BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{93384C4A-51D6-4B1B-9F92-9BB071D254A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.UserNotification", "api\HexaVerticalSlice.BC.UserNotification\HexaVerticalSlice.BC.UserNotification.csproj", "{B6A2D7AF-445F-4C49-B486-CF1F812E5560}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.FeedComputation", "api\HexaVerticalSlice.BC.FeedComputation\HexaVerticalSlice.BC.FeedComputation.csproj", "{B6A2D7AF-445F-4C49-B486-CF1F812E5560}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APP", "APP", "{4C025919-8F18-4829-9DF7-3E142B62B1B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.FeedDisplay.Tests.Acceptance", "api\HexaVerticalSlice.BC.FeedDisplay.Tests.Acceptance\HexaVerticalSlice.BC.FeedDisplay.Tests.Acceptance.csproj", "{708DDC9D-F778-4D02-ACBB-753DF2C5A996}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.Api.Tests.Acceptance", "api\HexaVerticalSlice.Api.Tests.Acceptance\HexaVerticalSlice.Api.Tests.Acceptance.csproj", "{708DDC9D-F778-4D02-ACBB-753DF2C5A996}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.Api.BuildingBlocks", "api\HexaVerticalSlice.Api.BuildingBlocks\HexaVerticalSlice.Api.BuildingBlocks.csproj", "{A291923E-41E6-431D-A4E9-ADFDF05D1C47}"
 EndProject
@@ -30,10 +28,6 @@ Global
 		{1530C240-32E3-4113-9D87-6F0BA0D7906A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1530C240-32E3-4113-9D87-6F0BA0D7906A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1530C240-32E3-4113-9D87-6F0BA0D7906A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E03B026-8352-4501-8148-77EF7CB07DE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E03B026-8352-4501-8148-77EF7CB07DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E03B026-8352-4501-8148-77EF7CB07DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E03B026-8352-4501-8148-77EF7CB07DE4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A08D626B-B398-4B74-B55C-DC3760FB98BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A08D626B-B398-4B74-B55C-DC3760FB98BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A08D626B-B398-4B74-B55C-DC3760FB98BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,7 +56,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1530C240-32E3-4113-9D87-6F0BA0D7906A} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
 		{A08D626B-B398-4B74-B55C-DC3760FB98BF} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
-		{2E03B026-8352-4501-8148-77EF7CB07DE4} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
 		{B6A2D7AF-445F-4C49-B486-CF1F812E5560} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
 		{708DDC9D-F778-4D02-ACBB-753DF2C5A996} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
 		{A291923E-41E6-431D-A4E9-ADFDF05D1C47} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}

@@ -1,7 +1,8 @@
 using HexaVerticalSlice;
 using HexaVerticalSlice.Api.BuildingBlocks.Tenant;
 using HexaVerticalSlice.BC.AccountManagement;
-using HexaVerticalSlice.BC.FeedDisplay;
+using HexaVerticalSlice.BC.Feeds;
+using HexaVerticalSlice.BC.Networking;
 using HexaVerticalSlice.Configuration.Authentication;
 using HexaVerticalSlice.Configuration.Controllers;
 using MediatR;
@@ -17,12 +18,13 @@ builder.Services
     .AddAuthenticationServices(builder.Configuration)
     .AddControllerServices(builder.Configuration);
 
+Action<MediatRServiceConfiguration> configureUnitOfWork = options =>
+    options.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UnitOfWorkBehavior<,>));
+
 builder.Services
-    .RegisterAccountManagement(options =>
-        options.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UnitOfWorkBehavior<,>))
-    )
-    .RegisterFeedDisplay(options => options.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UnitOfWorkBehavior<,>)))
-    ;
+    .RegisterAccountManagementBoundedContext(configureUnitOfWork)
+    .RegisterNetworkingBoundedContext(configureUnitOfWork)
+    .RegisterFeedComputationContext(configureUnitOfWork);
 
 var app = builder.Build();
 
