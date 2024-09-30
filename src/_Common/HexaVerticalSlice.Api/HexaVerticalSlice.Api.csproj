@@ -15,9 +15,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\HexaVerticalSlice.BC.AccountManagement\HexaVerticalSlice.BC.AccountManagement.csproj"/>
-        <ProjectReference Include="..\HexaVerticalSlice.BC.FeedComputation\HexaVerticalSlice.BC.FeedComputation.csproj"/>
-        <ProjectReference Include="..\HexaVerticalSlice.BC.Networking\HexaVerticalSlice.BC.Networking.csproj"/>
+        <ProjectReference Include="..\..\AccountManagement\HexaVerticalSlice.BC.AccountManagement\HexaVerticalSlice.BC.AccountManagement.csproj"/>
+        <ProjectReference Include="..\..\FeedComputation\HexaVerticalSlice.BC.FeedComputation\HexaVerticalSlice.BC.FeedComputation.csproj"/>
+        <ProjectReference Include="..\..\Networking\HexaVerticalSlice.BC.Networking\HexaVerticalSlice.BC.Networking.csproj"/>
     </ItemGroup>
 
 </Project>

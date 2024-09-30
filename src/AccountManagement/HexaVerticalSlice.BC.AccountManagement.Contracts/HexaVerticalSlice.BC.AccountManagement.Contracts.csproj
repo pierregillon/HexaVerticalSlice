@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\HexaVerticalSlice.Api.BuildingBlocks\HexaVerticalSlice.Api.BuildingBlocks.csproj"/>
+        <ProjectReference Include="..\..\_Common\HexaVerticalSlice.Api.BuildingBlocks\HexaVerticalSlice.Api.BuildingBlocks.csproj"/>
     </ItemGroup>
 
 </Project>

@@ -52,7 +52,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\HexaVerticalSlice.Api\HexaVerticalSlice.Api.csproj"/>
-        <ProjectReference Include="..\HexaVerticalSlice.BC.Networking\HexaVerticalSlice.BC.Networking.csproj"/>
+        <ProjectReference Include="..\..\Networking\HexaVerticalSlice.BC.Networking\HexaVerticalSlice.BC.Networking.csproj"/>
     </ItemGroup>
 
     <ItemGroup>

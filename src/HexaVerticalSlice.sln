@@ -1,28 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.Api", "api\HexaVerticalSlice.Api\HexaVerticalSlice.Api.csproj", "{1530C240-32E3-4113-9D87-6F0BA0D7906A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.Api", "_common\HexaVerticalSlice.Api\HexaVerticalSlice.Api.csproj", "{1530C240-32E3-4113-9D87-6F0BA0D7906A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.Networking", "api\HexaVerticalSlice.BC.Networking\HexaVerticalSlice.BC.Networking.csproj", "{A08D626B-B398-4B74-B55C-DC3760FB98BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.Networking", "Networking\HexaVerticalSlice.BC.Networking\HexaVerticalSlice.BC.Networking.csproj", "{A08D626B-B398-4B74-B55C-DC3760FB98BF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{93384C4A-51D6-4B1B-9F92-9BB071D254A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.FeedComputation", "FeedComputation\HexaVerticalSlice.BC.FeedComputation\HexaVerticalSlice.BC.FeedComputation.csproj", "{B6A2D7AF-445F-4C49-B486-CF1F812E5560}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.FeedComputation", "api\HexaVerticalSlice.BC.FeedComputation\HexaVerticalSlice.BC.FeedComputation.csproj", "{B6A2D7AF-445F-4C49-B486-CF1F812E5560}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.Api.Tests.Acceptance", "_common\HexaVerticalSlice.Api.Tests.Acceptance\HexaVerticalSlice.Api.Tests.Acceptance.csproj", "{708DDC9D-F778-4D02-ACBB-753DF2C5A996}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APP", "APP", "{4C025919-8F18-4829-9DF7-3E142B62B1B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.Api.BuildingBlocks", "_common\HexaVerticalSlice.Api.BuildingBlocks\HexaVerticalSlice.Api.BuildingBlocks.csproj", "{A291923E-41E6-431D-A4E9-ADFDF05D1C47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.Api.Tests.Acceptance", "api\HexaVerticalSlice.Api.Tests.Acceptance\HexaVerticalSlice.Api.Tests.Acceptance.csproj", "{708DDC9D-F778-4D02-ACBB-753DF2C5A996}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.AccountManagement", "AccountManagement\HexaVerticalSlice.BC.AccountManagement\HexaVerticalSlice.BC.AccountManagement.csproj", "{B8922D89-8B27-44B4-BE32-1A8E7638719C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.Api.BuildingBlocks", "api\HexaVerticalSlice.Api.BuildingBlocks\HexaVerticalSlice.Api.BuildingBlocks.csproj", "{A291923E-41E6-431D-A4E9-ADFDF05D1C47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.AccountManagement.Contracts", "AccountManagement\HexaVerticalSlice.BC.AccountManagement.Contracts\HexaVerticalSlice.BC.AccountManagement.Contracts.csproj", "{3F472F19-74C1-46F4-A3DD-020EC0431E06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.AccountManagement", "api\HexaVerticalSlice.BC.AccountManagement\HexaVerticalSlice.BC.AccountManagement.csproj", "{B8922D89-8B27-44B4-BE32-1A8E7638719C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.Networking.Contracts", "Networking\HexaVerticalSlice.BC.Networking.Contracts\HexaVerticalSlice.BC.Networking.Contracts.csproj", "{F355724B-5B88-4C21-8589-385E9EE0C764}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.AccountManagement.Contracts", "api\HexaVerticalSlice.BC.AccountManagement.Contracts\HexaVerticalSlice.BC.AccountManagement.Contracts.csproj", "{3F472F19-74C1-46F4-A3DD-020EC0431E06}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccountManagement", "AccountManagement", "{F9BD7F98-4415-4358-A353-F6F007201DF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaVerticalSlice.BC.Networking.Contracts", "api\HexaVerticalSlice.BC.Networking.Contracts\HexaVerticalSlice.BC.Networking.Contracts.csproj", "{F355724B-5B88-4C21-8589-385E9EE0C764}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FeedComputation", "FeedComputation", "{2612D5DF-ADAC-4AA8-A070-29E3466659D0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{0499C614-A7C0-472C-84E1-0AF12608308B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7155B20B-AD5D-47D2-8EB0-C769C927952E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Networking", "Networking", "{33FE7905-5AE8-4F60-BE7A-63F56F47867E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,15 +62,10 @@ Global
 		{F355724B-5B88-4C21-8589-385E9EE0C764}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{1530C240-32E3-4113-9D87-6F0BA0D7906A} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
-		{A08D626B-B398-4B74-B55C-DC3760FB98BF} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
-		{B6A2D7AF-445F-4C49-B486-CF1F812E5560} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
-		{B8922D89-8B27-44B4-BE32-1A8E7638719C} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
-		{3F472F19-74C1-46F4-A3DD-020EC0431E06} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
-		{F355724B-5B88-4C21-8589-385E9EE0C764} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
-		{0499C614-A7C0-472C-84E1-0AF12608308B} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
-		{A291923E-41E6-431D-A4E9-ADFDF05D1C47} = {0499C614-A7C0-472C-84E1-0AF12608308B}
-		{7155B20B-AD5D-47D2-8EB0-C769C927952E} = {93384C4A-51D6-4B1B-9F92-9BB071D254A2}
-		{708DDC9D-F778-4D02-ACBB-753DF2C5A996} = {7155B20B-AD5D-47D2-8EB0-C769C927952E}
+		{B8922D89-8B27-44B4-BE32-1A8E7638719C} = {F9BD7F98-4415-4358-A353-F6F007201DF7}
+		{3F472F19-74C1-46F4-A3DD-020EC0431E06} = {F9BD7F98-4415-4358-A353-F6F007201DF7}
+		{B6A2D7AF-445F-4C49-B486-CF1F812E5560} = {2612D5DF-ADAC-4AA8-A070-29E3466659D0}
+		{A08D626B-B398-4B74-B55C-DC3760FB98BF} = {33FE7905-5AE8-4F60-BE7A-63F56F47867E}
+		{F355724B-5B88-4C21-8589-385E9EE0C764} = {33FE7905-5AE8-4F60-BE7A-63F56F47867E}
 	EndGlobalSection
 EndGlobal
