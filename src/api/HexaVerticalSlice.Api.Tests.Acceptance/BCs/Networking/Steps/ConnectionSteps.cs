@@ -40,7 +40,7 @@ public class ConnectionSteps(TestClient client, UserAccountSteps userAccountStep
 
     [Given(@"(.*) accepted my invitation")]
     [When(@"(.*) accepts my invitation")]
-    public async Task WhenTheUserUserTestComAcceptsMyInvitation(string emailAddress)
+    public async Task WhenTheUserAcceptsMyInvitation(string emailAddress)
     {
         if (_invitationId.HasValue == false)
         {

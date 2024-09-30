@@ -84,14 +84,12 @@ namespace HexaVerticalSlice.Api.Tests.Acceptance.BCs.FeedComputation.Features
 #line 7
     await testRunner.GivenAsync("I am registered and logged in as john@company.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
+            global::Reqnroll.Table table10 = new global::Reqnroll.Table(new string[] {
+                        "Email address"});
+            table10.AddRow(new string[] {
+                        "emma@company.com"});
 #line 8
-    await testRunner.AndAsync("emma@company.com has registered", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 9
-    await testRunner.AndAsync("I invited emma@company.com to connect with", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 10
-    await testRunner.AndAsync("emma@company.com accepted my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+    await testRunner.AndAsync("I connected the following users", ((string)(null)), table10, "And ");
 #line hidden
         }
         
@@ -167,18 +165,18 @@ await this.FeatureBackgroundAsync();
 #line 19
     await testRunner.AndAsync("I get my feed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table10 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table11 = new global::Reqnroll.Table(new string[] {
                             "Author",
                             "Date",
                             "Title",
                             "Content"});
-                table10.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "emma@company.com",
                             "2024-09-25",
                             "My first post",
                             "This is my first post"});
 #line 20
-    await testRunner.ThenAsync("my feed contains the following posts:", ((string)(null)), table10, "Then ");
+    await testRunner.ThenAsync("my feed contains the following posts:", ((string)(null)), table11, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -205,14 +203,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 await this.FeatureBackgroundAsync();
 #line hidden
+                global::Reqnroll.Table table12 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table12.AddRow(new string[] {
+                            "sam@company.com"});
 #line 25
-    await testRunner.GivenAsync("sam@company.com has registered", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 26
-    await testRunner.AndAsync("I invited sam@company.com to connect with", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 27
-    await testRunner.AndAsync("sam@company.com accepted my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+    await testRunner.GivenAsync("I connected the following users", ((string)(null)), table12, "Given ");
 #line hidden
 #line 28
     await testRunner.WhenAsync("emma@company.com posts a post with title \"My first post\" and content \"This is my " +
@@ -225,20 +221,20 @@ await this.FeatureBackgroundAsync();
 #line 30
     await testRunner.AndAsync("I get my feed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table11 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table13 = new global::Reqnroll.Table(new string[] {
                             "Author",
                             "Title",
                             "Content"});
-                table11.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "sam@company.com",
                             "New post",
                             "This is a new post"});
-                table11.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "emma@company.com",
                             "My first post",
                             "This is my first post"});
 #line 31
-    await testRunner.ThenAsync("my feed contains the following posts:", ((string)(null)), table11, "Then ");
+    await testRunner.ThenAsync("my feed contains the following posts:", ((string)(null)), table13, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

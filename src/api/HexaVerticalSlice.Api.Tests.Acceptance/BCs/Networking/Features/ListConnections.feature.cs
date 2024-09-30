@@ -122,11 +122,11 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 await this.FeatureBackgroundAsync();
 #line hidden
-                global::Reqnroll.Table table17 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table19 = new global::Reqnroll.Table(new string[] {
                             "User",
                             "Added date"});
 #line 12
-    await testRunner.ThenAsync("my connections are", ((string)(null)), table17, "Then ");
+    await testRunner.ThenAsync("my connections are", ((string)(null)), table19, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -162,14 +162,14 @@ await this.FeatureBackgroundAsync();
 #line 18
     await testRunner.AndAsync("emma@company.com accepts my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table18 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table20 = new global::Reqnroll.Table(new string[] {
                             "User",
                             "Added date"});
-                table18.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "emma@test.com",
                             "2024-09-22"});
 #line 19
-    await testRunner.ThenAsync("my connections are", ((string)(null)), table18, "Then ");
+    await testRunner.ThenAsync("my connections are", ((string)(null)), table20, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -205,14 +205,14 @@ await this.FeatureBackgroundAsync();
 #line 26
     await testRunner.AndAsync("emma@company.com accepts my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table19 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table21 = new global::Reqnroll.Table(new string[] {
                             "User",
                             "Added date"});
-                table19.AddRow(new string[] {
+                table21.AddRow(new string[] {
                             "john@company.com",
                             "2024-09-22"});
 #line 27
-    await testRunner.ThenAsync("emma@company.com\'s connections are", ((string)(null)), table19, "Then ");
+    await testRunner.ThenAsync("emma@company.com\'s connections are", ((string)(null)), table21, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

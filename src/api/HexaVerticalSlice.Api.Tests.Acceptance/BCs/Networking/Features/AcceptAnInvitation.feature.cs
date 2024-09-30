@@ -120,11 +120,11 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 await this.FeatureBackgroundAsync();
 #line hidden
-                global::Reqnroll.Table table12 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table14 = new global::Reqnroll.Table(new string[] {
                             "Invited profile",
                             "Request date"});
 #line 11
-    await testRunner.ThenAsync("my invitations list is", ((string)(null)), table12, "Then ");
+    await testRunner.ThenAsync("my invitations list is", ((string)(null)), table14, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -157,14 +157,14 @@ await this.FeatureBackgroundAsync();
 #line 16
     await testRunner.WhenAsync("I invite emma@company.com to connect with", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-                global::Reqnroll.Table table13 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table15 = new global::Reqnroll.Table(new string[] {
                             "Invited profile",
                             "Request date"});
-                table13.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "emma@company.com",
                             "2024-09-25"});
 #line 17
-    await testRunner.ThenAsync("my invitations list is", ((string)(null)), table13, "Then ");
+    await testRunner.ThenAsync("my invitations list is", ((string)(null)), table15, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -197,11 +197,11 @@ await this.FeatureBackgroundAsync();
 #line 23
     await testRunner.WhenAsync("emma@company.com accepts my invitation", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-                global::Reqnroll.Table table14 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table16 = new global::Reqnroll.Table(new string[] {
                             "User",
                             "Request date"});
 #line 24
-    await testRunner.ThenAsync("my invitations list is", ((string)(null)), table14, "Then ");
+    await testRunner.ThenAsync("my invitations list is", ((string)(null)), table16, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

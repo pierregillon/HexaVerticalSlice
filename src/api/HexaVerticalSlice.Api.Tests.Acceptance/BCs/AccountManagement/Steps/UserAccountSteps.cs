@@ -13,7 +13,7 @@ namespace HexaVerticalSlice.Api.Tests.Acceptance.BCs.AccountManagement.Steps;
 [Binding]
 public class UserAccountSteps(TestClient client, TestApplication application) : StepBase(client, application)
 {
-    public const string DefaultPassword = "test";
+    private const string DefaultPassword = "test";
     private JwtToken? _token;
 
     [Given(@"I am registered and log in")]
@@ -100,16 +100,16 @@ public class UserAccountSteps(TestClient client, TestApplication application) : 
 
     public async Task ExecuteTemporaryWithUser(string emailAddress, Func<Task> action)
     {
-        var currentToken = client.CurrentToken;
-        var currentEmailAddress = client.CurrentEmailAddress;
+        var currentToken = Client.CurrentToken;
+        var currentEmailAddress = Client.CurrentEmailAddress;
 
         var token = await LogIn(emailAddress, DefaultPassword);
 
-        client.DefineToken(emailAddress, token!.Token);
+        Client.DefineToken(emailAddress, token!.Token);
 
         await action();
 
-        client.DefineToken(currentEmailAddress!, currentToken!);
+        Client.DefineToken(currentEmailAddress!, currentToken!);
     }
 
     private async Task<JwtToken> Register(string email, string password)

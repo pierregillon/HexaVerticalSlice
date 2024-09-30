@@ -9,10 +9,8 @@ public sealed class ScenarioInitializer(
 ) : IDisposable
 {
     [BeforeScenario]
-    public void InitializeAsync()
-    {
+    public void InitializeAsync() =>
         scenarioContext.Set(application.Server.CreateClient());
-    }
 
     public void Dispose() => application.Dispose();
 }
