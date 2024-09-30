@@ -1,5 +1,5 @@
 using HexaVerticalSlice.Api.BuildingBlocks.Events;
-using HexaVerticalSlice.BC.AccountManagement.Domain;
+using HexaVerticalSlice.BC.AccountManagement.CoreDomain;
 
 namespace HexaVerticalSlice.BC.AccountManagement.Infra.Database;
 

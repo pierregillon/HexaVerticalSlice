@@ -1,6 +1,6 @@
 using FluentAssertions;
 using HexaVerticalSlice.Api.Tests.Acceptance.Utils;
-using HexaVerticalSlice.BC.Networking.Features.SearchForProfile;
+using HexaVerticalSlice.BC.Networking.UseCases.SearchForProfile;
 using Reqnroll;
 
 namespace HexaVerticalSlice.Api.Tests.Acceptance.BCs.Networking.Steps;

@@ -1,7 +1,7 @@
 using HexaVerticalSlice.Api.BuildingBlocks.Events;
 using HexaVerticalSlice.Api.BuildingBlocks.Exceptions;
-using HexaVerticalSlice.BC.Networking.Domain.Invitations;
-using HexaVerticalSlice.BC.Networking.Domain.Profiles;
+using HexaVerticalSlice.BC.Networking.CoreDomain.Invitations;
+using HexaVerticalSlice.BC.Networking.CoreDomain.Profiles;
 using HexaVerticalSlice.BC.Networking.Infra.Database.Models;
 
 namespace HexaVerticalSlice.BC.Networking.Infra.Database.Repositories;

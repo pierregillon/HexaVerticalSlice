@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using HexaVerticalSlice.Api.BuildingBlocks.Cqrs.Queries;
-using HexaVerticalSlice.BC.AccountManagement.Features.AccountExists;
+using HexaVerticalSlice.BC.AccountManagement.UseCases.AccountExists;
 using HexaVerticalSlice.Configuration.Authentication.Bearer;
 
 namespace HexaVerticalSlice.Configuration.Controllers;

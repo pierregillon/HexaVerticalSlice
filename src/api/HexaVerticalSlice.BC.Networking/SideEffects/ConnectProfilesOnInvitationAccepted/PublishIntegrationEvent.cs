@@ -1,6 +1,6 @@
 using HexaVerticalSlice.Api.BuildingBlocks.Events;
 using HexaVerticalSlice.BC.Networking.Contracts;
-using HexaVerticalSlice.BC.Networking.Domain.Profiles;
+using HexaVerticalSlice.BC.Networking.CoreDomain.Profiles;
 using HexaVerticalSlice.BC.Networking.Infra.Database;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,8 +1,7 @@
 ﻿using System.Reflection;
-using HexaVerticalSlice.Api.BuildingBlocks.Cqrs;
 using HexaVerticalSlice.Api.BuildingBlocks.Events;
-using HexaVerticalSlice.BC.Feeds.Features;
 using HexaVerticalSlice.BC.Feeds.Infra;
+using HexaVerticalSlice.BC.Feeds.UseCases;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
 namespace HexaVerticalSlice.BC.Feeds;
@@ -13,7 +12,7 @@ public static class DependencyInjection
 
     public static IServiceCollection RegisterFeedComputationContext(
         this IServiceCollection services,
-        Action<MediatRServiceConfiguration> configureUnitOfWork
+        Action<MediatRServiceConfiguration> _
     )
     {
         services
@@ -23,7 +22,6 @@ public static class DependencyInjection
             .Add(new AssemblyPart(CurrentBoundedContextAssembly));
 
         services
-            .AddCqrs(configureUnitOfWork, CurrentBoundedContextAssembly)
             .AddDomainEventPublishing(CurrentBoundedContextAssembly)
             .AddSharedInfrastructure()
             .AddUseCases();

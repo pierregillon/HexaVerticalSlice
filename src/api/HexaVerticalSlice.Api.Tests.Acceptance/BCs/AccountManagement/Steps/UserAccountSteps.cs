@@ -3,7 +3,7 @@ using FluentAssertions.Extensions;
 using HexaVerticalSlice.Api.Tests.Acceptance.BCs.Steps;
 using HexaVerticalSlice.Api.Tests.Acceptance.Configuration;
 using HexaVerticalSlice.Api.Tests.Acceptance.Utils;
-using HexaVerticalSlice.BC.AccountManagement.Domain;
+using HexaVerticalSlice.BC.AccountManagement.CoreDomain;
 using HexaVerticalSlice.BC.AccountManagement.Infra.TokenGeneration;
 using Microsoft.Extensions.Options;
 using Reqnroll;

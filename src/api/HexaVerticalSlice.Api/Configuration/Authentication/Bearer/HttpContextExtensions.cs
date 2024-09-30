@@ -1,5 +1,5 @@
 ﻿using System.Security.Claims;
-using HexaVerticalSlice.BC.AccountManagement.Domain;
+using HexaVerticalSlice.BC.AccountManagement.CoreDomain;
 
 namespace HexaVerticalSlice.Configuration.Authentication.Bearer;
 

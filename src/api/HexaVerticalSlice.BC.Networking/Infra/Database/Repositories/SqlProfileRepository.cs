@@ -2,7 +2,7 @@ using HexaVerticalSlice.Api.BuildingBlocks.Events;
 using HexaVerticalSlice.Api.BuildingBlocks.Exceptions;
 using HexaVerticalSlice.Api.BuildingBlocks.Tenant;
 using HexaVerticalSlice.Api.BuildingBlocks.Time;
-using HexaVerticalSlice.BC.Networking.Domain.Profiles;
+using HexaVerticalSlice.BC.Networking.CoreDomain.Profiles;
 using HexaVerticalSlice.BC.Networking.Infra.Database.Models;
 using Microsoft.EntityFrameworkCore;
 

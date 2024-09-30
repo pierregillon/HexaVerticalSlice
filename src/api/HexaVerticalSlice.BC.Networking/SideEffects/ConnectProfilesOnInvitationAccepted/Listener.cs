@@ -1,6 +1,6 @@
 using HexaVerticalSlice.Api.BuildingBlocks.Events;
-using HexaVerticalSlice.BC.Networking.Domain.Invitations;
-using HexaVerticalSlice.BC.Networking.Domain.Profiles;
+using HexaVerticalSlice.BC.Networking.CoreDomain.Invitations;
+using HexaVerticalSlice.BC.Networking.CoreDomain.Profiles;
 
 namespace HexaVerticalSlice.BC.Networking.SideEffects.ConnectProfilesOnInvitationAccepted;
 

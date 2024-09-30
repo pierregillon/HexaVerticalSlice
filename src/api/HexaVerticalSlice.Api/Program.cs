@@ -1,27 +1,27 @@
-using HexaVerticalSlice;
 using HexaVerticalSlice.Api.BuildingBlocks.Tenant;
 using HexaVerticalSlice.BC.AccountManagement;
 using HexaVerticalSlice.BC.Feeds;
 using HexaVerticalSlice.BC.Networking;
 using HexaVerticalSlice.Configuration.Authentication;
 using HexaVerticalSlice.Configuration.Controllers;
+using HexaVerticalSlice.Transaction;
 using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+var services = builder.Services;
 
-builder.Services.AddTenant();
-
-builder.Services
+services
+    .AddEndpointsApiExplorer()
+    .AddSwaggerGen(x => x.CustomSchemaIds(type => type.ToString()))
     .AddAuthenticationServices(builder.Configuration)
-    .AddControllerServices(builder.Configuration);
+    .AddControllerServices(builder.Configuration)
+    .AddTenant();
 
 Action<MediatRServiceConfiguration> configureUnitOfWork = options =>
     options.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UnitOfWorkBehavior<,>));
 
-builder.Services
+services
     .RegisterAccountManagementBoundedContext(configureUnitOfWork)
     .RegisterNetworkingBoundedContext(configureUnitOfWork)
     .RegisterFeedComputationContext(configureUnitOfWork);

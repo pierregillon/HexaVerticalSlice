@@ -1,4 +1,4 @@
-﻿using HexaVerticalSlice.BC.AccountManagement.Domain;
+﻿using HexaVerticalSlice.BC.AccountManagement.CoreDomain;
 using Microsoft.Extensions.Options;
 
 namespace HexaVerticalSlice.BC.AccountManagement.Infra.Database;
