@@ -14,7 +14,7 @@ public class TestApplication(IReqnrollOutputHelper specFlowOutputHelper)
         services.AddSingleton(_ =>
         {
             var clock = Substitute.For<IClock>();
-            clock.Now().Returns(DateTime.UtcNow);
+            clock.Now().Returns(_ => DateTime.UtcNow);
             return clock;
         });
     }

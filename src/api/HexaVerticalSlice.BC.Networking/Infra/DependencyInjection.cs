@@ -1,7 +1,9 @@
+using HexaVerticalSlice.BC.Networking.Contracts;
 using HexaVerticalSlice.BC.Networking.Domain.Invitations;
 using HexaVerticalSlice.BC.Networking.Domain.Profiles;
 using HexaVerticalSlice.BC.Networking.Infra.Database;
 using HexaVerticalSlice.BC.Networking.Infra.Database.Repositories;
+using HexaVerticalSlice.BC.Networking.Infra.ExternalAdapter;
 using Microsoft.Extensions.Options;
 
 namespace HexaVerticalSlice.BC.Networking.Infra;
@@ -19,7 +21,8 @@ public static class DependencyInjection
         services
             .AddTransient<IProfileRepository, SqlProfileRepository>()
             .AddTransient<IInvitationRepository, SqlInvitationRepository>()
-            .AddDbContext<FeedDisplayDbContext>((sp, options) =>
+            .AddTransient<IProfileFinder, SqlProfileFinder>()
+            .AddDbContext<NetworkingDbContext>((sp, options) =>
             {
                 var configuration = sp.GetRequiredService<IOptions<DatabaseConfiguration>>();
 

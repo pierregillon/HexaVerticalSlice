@@ -3,8 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HexaVerticalSlice.BC.Networking.Infra.Database;
 
-public class FeedDisplayDbContext(
-    DbContextOptions<FeedDisplayDbContext> options
+public class NetworkingDbContext(
+    DbContextOptions<NetworkingDbContext> options
 ) : DbContext(options)
 {
     public DbSet<ProfileEntity> Profiles { get; set; } = default!;
@@ -15,7 +15,7 @@ public class FeedDisplayDbContext(
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.HasDefaultSchema("feed_display");
+        modelBuilder.HasDefaultSchema("networking");
 
         modelBuilder.Entity<ConnectionEntity>(x => x.HasKey(y => new { y.ProfileId, y.ConnectedProfileId }));
         modelBuilder.Entity<ProfileEntity>(x => x.HasMany(y => y.Connections).WithMany(z => z.Profiles));

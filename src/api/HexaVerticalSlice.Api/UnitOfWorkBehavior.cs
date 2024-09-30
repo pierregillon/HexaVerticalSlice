@@ -1,5 +1,6 @@
 using System.Transactions;
 using HexaVerticalSlice.BC.AccountManagement.Infra.Database;
+using HexaVerticalSlice.BC.Feeds.Infra.Database;
 using HexaVerticalSlice.BC.Networking.Infra.Database;
 using MediatR;
 
@@ -7,7 +8,8 @@ namespace HexaVerticalSlice;
 
 internal class UnitOfWorkBehavior<TRequest, TResponse>(
     AccountManagementDbContext accountManagementDbContext,
-    FeedDisplayDbContext feedDisplayDbContext
+    NetworkingDbContext networkingDbContext,
+    FeedComputationDbContext feedComputationDbContext
 ) : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {
     public async Task<TResponse> Handle(
@@ -21,7 +23,8 @@ internal class UnitOfWorkBehavior<TRequest, TResponse>(
         var response = await next();
 
         await accountManagementDbContext.SaveChangesAsync(cancellationToken);
-        await feedDisplayDbContext.SaveChangesAsync(cancellationToken);
+        await networkingDbContext.SaveChangesAsync(cancellationToken);
+        await feedComputationDbContext.SaveChangesAsync(cancellationToken);
 
         scope.Complete();
 

@@ -16,6 +16,7 @@
     <ItemGroup>
         <ProjectReference Include="..\HexaVerticalSlice.Api.BuildingBlocks\HexaVerticalSlice.Api.BuildingBlocks.csproj"/>
         <ProjectReference Include="..\HexaVerticalSlice.BC.AccountManagement.Contracts\HexaVerticalSlice.BC.AccountManagement.Contracts.csproj"/>
+        <ProjectReference Include="..\HexaVerticalSlice.BC.Networking.Contracts\HexaVerticalSlice.BC.Networking.Contracts.csproj"/>
     </ItemGroup>
 
 </Project>

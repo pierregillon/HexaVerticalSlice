@@ -1,3 +1,4 @@
+using HexaVerticalSlice.Api.BuildingBlocks.Events;
 using HexaVerticalSlice.Api.BuildingBlocks.Exceptions;
 using HexaVerticalSlice.Api.BuildingBlocks.Tenant;
 using HexaVerticalSlice.Api.BuildingBlocks.Time;
@@ -7,7 +8,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HexaVerticalSlice.BC.Networking.Infra.Database.Repositories;
 
-public class SqlProfileRepository(FeedDisplayDbContext dbContext, IClock clock) : IProfileRepository
+public class SqlProfileRepository(NetworkingDbContext dbContext, IClock clock, IDomainEventPublisher publisher)
+    : IProfileRepository
 {
     public Task<Profile> Get(ProfileId id)
     {
@@ -71,6 +73,9 @@ public class SqlProfileRepository(FeedDisplayDbContext dbContext, IClock clock) 
                 });
             }
         }
+
+        await publisher.Publish(profile.UncommittedChanges);
+        profile.MarkAsCommitted();
     }
 
     private static Profile Rehydrate(ProfileEntity entity) =>

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HexaVerticalSlice.BC.Networking.Features.SearchForProfile;
 
-public class SearchForProfileGetProfileQueryHandler(FeedDisplayDbContext dbContext)
+public class SearchForProfileGetProfileQueryHandler(NetworkingDbContext dbContext)
     : IQueryHandler<SearchForProfileQuery, ProfileDto>
 {
     public async Task<ProfileDto> Handle(SearchForProfileQuery query)

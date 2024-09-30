@@ -1,4 +1,5 @@
 ﻿using HexaVerticalSlice.BC.AccountManagement.Infra.Database;
+using HexaVerticalSlice.BC.Feeds.Infra.Database;
 using HexaVerticalSlice.BC.Networking.Infra.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -12,21 +13,23 @@ public static class ServiceCollectionExtensions
     {
         var databaseName = Guid.NewGuid().ToString();
 
-        services.RemoveWhere(x => x.ServiceType == typeof(DbContextOptions<FeedDisplayDbContext>));
+        ConfigureInMemoryDb<AccountManagementDbContext>(services, databaseName);
+        ConfigureInMemoryDb<NetworkingDbContext>(services, databaseName);
+        ConfigureInMemoryDb<FeedComputationDbContext>(services, databaseName);
+    }
 
-        services.AddDbContext<FeedDisplayDbContext>(options =>
+    private static IServiceCollection ConfigureInMemoryDb<T>(this IServiceCollection services, string databaseName)
+        where T : DbContext
+    {
+        services.RemoveWhere(x => x.ServiceType == typeof(DbContextOptions<T>));
+
+        services.AddDbContext<T>(options =>
         {
             options.UseInMemoryDatabase(databaseName);
             options.ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning));
         });
 
-        services.RemoveWhere(x => x.ServiceType == typeof(DbContextOptions<AccountManagementDbContext>));
-
-        services.AddDbContext<AccountManagementDbContext>(options =>
-        {
-            options.UseInMemoryDatabase(databaseName);
-            options.ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning));
-        });
+        return services;
     }
 
     private static void RemoveWhere(this IServiceCollection services, Func<ServiceDescriptor, bool> filter)

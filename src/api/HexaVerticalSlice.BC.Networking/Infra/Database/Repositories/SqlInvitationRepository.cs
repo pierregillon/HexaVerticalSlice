@@ -6,7 +6,7 @@ using HexaVerticalSlice.BC.Networking.Infra.Database.Models;
 
 namespace HexaVerticalSlice.BC.Networking.Infra.Database.Repositories;
 
-public class SqlInvitationRepository(FeedDisplayDbContext dbContext, IDomainEventPublisher publisher)
+public class SqlInvitationRepository(NetworkingDbContext dbContext, IDomainEventPublisher publisher)
     : IInvitationRepository
 {
     public async Task<Invitation> Get(InvitationId id)

@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Options;
 
-namespace HexaVerticalSlice.BC.Networking.Infra.Database;
+namespace HexaVerticalSlice.BC.Feeds.Infra.Database;
 
 internal static class DbContextExtensions
 {
@@ -17,7 +17,7 @@ internal static class DbContextExtensions
 
     internal static DbContextOptionsBuilder UseLogging(
         this DbContextOptionsBuilder options,
-        ILogger<NetworkingDbContext> logger
+        ILogger<FeedComputationDbContext> logger
     ) =>
         options
             .LogTo((_1, _2) => true, e => logger.Log(e.LogLevel, e.EventId, e.ToString()))

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HexaVerticalSlice.BC.Networking.Features.ListInvitations;
 
-public class ListInvitationsQueryHandler(ICurrentTenant currentTenant, FeedDisplayDbContext dbContext)
+public class ListInvitationsQueryHandler(ICurrentTenant currentTenant, NetworkingDbContext dbContext)
     : IQueryHandler<ListInvitationsQuery, IReadOnlyCollection<InvitationDto>>
 {
     public async Task<IReadOnlyCollection<InvitationDto>> Handle(ListInvitationsQuery query)

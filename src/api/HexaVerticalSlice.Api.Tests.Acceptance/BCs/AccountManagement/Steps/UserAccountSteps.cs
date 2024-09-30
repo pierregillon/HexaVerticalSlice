@@ -98,6 +98,20 @@ public class UserAccountSteps(TestClient client, TestApplication application) : 
         return (data, token);
     }
 
+    public async Task ExecuteTemporaryWithUser(string emailAddress, Func<Task> action)
+    {
+        var currentToken = client.CurrentToken;
+        var currentEmailAddress = client.CurrentEmailAddress;
+
+        var token = await LogIn(emailAddress, DefaultPassword);
+
+        client.DefineToken(emailAddress, token!.Token);
+
+        await action();
+
+        client.DefineToken(currentEmailAddress!, currentToken!);
+    }
+
     private async Task<JwtToken> Register(string email, string password)
         => await Client.Post<JwtToken>("account-management/v1/users/register", new { email, password });
 

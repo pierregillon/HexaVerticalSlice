@@ -1,6 +1,8 @@
 ﻿using System.Reflection;
 using HexaVerticalSlice.Api.BuildingBlocks.Cqrs;
 using HexaVerticalSlice.Api.BuildingBlocks.Events;
+using HexaVerticalSlice.BC.Feeds.Features;
+using HexaVerticalSlice.BC.Feeds.Infra;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
 namespace HexaVerticalSlice.BC.Feeds;
@@ -22,7 +24,9 @@ public static class DependencyInjection
 
         services
             .AddCqrs(configureUnitOfWork, CurrentBoundedContextAssembly)
-            .AddDomainEventPublishing(CurrentBoundedContextAssembly);
+            .AddDomainEventPublishing(CurrentBoundedContextAssembly)
+            .AddSharedInfrastructure()
+            .AddUseCases();
 
         return services;
     }

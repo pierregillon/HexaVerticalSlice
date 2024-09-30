@@ -8,5 +8,5 @@ public interface IIntegrationEventListener<in TIntegrationEvent> : INotification
     Task INotificationHandler<TIntegrationEvent>.Handle(TIntegrationEvent notification, CancellationToken _) =>
         On(notification);
 
-    Task On(TIntegrationEvent domainEvent);
+    Task On(TIntegrationEvent integrationEvent);
 }

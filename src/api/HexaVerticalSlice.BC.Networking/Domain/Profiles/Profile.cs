@@ -28,6 +28,9 @@ public class Profile : AggregateRoot<ProfileId>
     public Invitation Invite(Profile target, DateTime createdAt) =>
         Invitation.Create(Id, target.Id, createdAt);
 
-    public void AddConnection(ProfileId profileId) =>
+    public void ConnectTo(ProfileId profileId)
+    {
         _connections.Add(profileId);
+        ApplyEvent(new ProfileConnected(Id, profileId));
+    }
 }

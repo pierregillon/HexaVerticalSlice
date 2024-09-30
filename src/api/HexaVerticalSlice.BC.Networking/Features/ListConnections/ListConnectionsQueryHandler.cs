@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HexaVerticalSlice.BC.Networking.Features.ListConnections;
 
-public class ListConnectionsQueryHandler(FeedDisplayDbContext dbContext)
+public class ListConnectionsQueryHandler(NetworkingDbContext dbContext)
     : IQueryHandler<ListConnectionsQuery, IReadOnlyCollection<ConnectionDto>>
 {
     public async Task<IReadOnlyCollection<ConnectionDto>> Handle(ListConnectionsQuery query)

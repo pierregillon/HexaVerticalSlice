@@ -1,14 +1,13 @@
 using FluentAssertions;
 using HexaVerticalSlice.Api.Tests.Acceptance.BCs.AccountManagement.Steps;
 using HexaVerticalSlice.Api.Tests.Acceptance.Utils;
-using HexaVerticalSlice.BC.AccountManagement.Domain;
 using Reqnroll;
 using Reqnroll.Assist;
 
 namespace HexaVerticalSlice.Api.Tests.Acceptance.BCs.Networking.Steps;
 
 [Binding]
-public class ConnectionSteps(TestClient client)
+public class ConnectionSteps(TestClient client, UserAccountSteps userAccountSteps)
 {
     private IReadOnlyCollection<InvitationDto>? _invitations;
     private Guid? _invitationId;
@@ -39,6 +38,7 @@ public class ConnectionSteps(TestClient client)
             .BeEquivalentTo(expected);
     }
 
+    [Given(@"(.*) accepted my invitation")]
     [When(@"(.*) accepts my invitation")]
     public async Task WhenTheUserUserTestComAcceptsMyInvitation(string emailAddress)
     {
@@ -47,19 +47,8 @@ public class ConnectionSteps(TestClient client)
             throw new InvalidOperationException("No invitation id has been defined.");
         }
 
-        var currentToken = client.CurrentToken;
-        var currentEmailAddress = client.CurrentEmailAddress;
-
-        var token = await client.Post<JwtToken>(
-            "account-management/v1/users/login",
-            new { email = emailAddress, password = UserAccountSteps.DefaultPassword }
-        );
-
-        client.DefineToken(emailAddress, token.Token);
-
-        await client.PostVoid($"networking/v1/invitations/{_invitationId.Value}/accept", new { });
-
-        client.DefineToken(currentEmailAddress!, currentToken!);
+        await userAccountSteps.ExecuteTemporaryWithUser(emailAddress,
+            async () => { await client.PostVoid($"networking/v1/invitations/{_invitationId.Value}/accept", new { }); });
     }
 
     [Then(@"my connections are")]
