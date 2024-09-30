@@ -2,18 +2,18 @@ using HexaVerticalSlice.Api.BuildingBlocks.Tenant;
 using HexaVerticalSlice.Api.BuildingBlocks.Time;
 using HexaVerticalSlice.BC.Feeds.Infra.Database;
 using HexaVerticalSlice.BC.Feeds.Infra.Database.Models;
-using HexaVerticalSlice.BC.Feeds.UseCases.SendPost.Ports;
+using HexaVerticalSlice.BC.Feeds.UseCases.PublishPost.Ports;
 
-namespace HexaVerticalSlice.BC.Feeds.UseCases.SendPost;
+namespace HexaVerticalSlice.BC.Feeds.UseCases.PublishPost;
 
-public class SendPostUseCase(
+public class PublishPostUseCase(
     FeedComputationDbContext dbContext,
     IProfileFinder profileFinder,
     IClock clock,
     ICurrentTenant currentTenant
-) : ISendPostUseCase
+) : IPublishPostUseCase
 {
-    public async Task SendPost(string title, string content)
+    public async Task PublishPost(string title, string content)
     {
         var profileId = await profileFinder.GetCurrentProfileId();
 

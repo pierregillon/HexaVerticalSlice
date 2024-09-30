@@ -1,4 +1,4 @@
-namespace HexaVerticalSlice.BC.Feeds.UseCases.SendPost.Ports;
+namespace HexaVerticalSlice.BC.Feeds.UseCases.PublishPost.Ports;
 
 public interface IProfileFinder
 {

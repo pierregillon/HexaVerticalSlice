@@ -1,5 +1,5 @@
 using HexaVerticalSlice.BC.Feeds.UseCases.GetFeed;
-using HexaVerticalSlice.BC.Feeds.UseCases.SendPost;
+using HexaVerticalSlice.BC.Feeds.UseCases.PublishPost;
 
 namespace HexaVerticalSlice.BC.Feeds.UseCases;
 

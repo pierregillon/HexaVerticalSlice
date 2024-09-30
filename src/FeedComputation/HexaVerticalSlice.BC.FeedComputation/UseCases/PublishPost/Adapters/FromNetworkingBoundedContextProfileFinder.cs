@@ -1,7 +1,7 @@
 using HexaVerticalSlice.Api.BuildingBlocks.Tenant;
 using HexaVerticalSlice.BC.Networking.Contracts;
 
-namespace HexaVerticalSlice.BC.Feeds.UseCases.SendPost.Adapters;
+namespace HexaVerticalSlice.BC.Feeds.UseCases.PublishPost.Adapters;
 
 public class FromNetworkingBoundedContextProfileFinder(IProfileFinder finder, ICurrentTenant currentTenant)
     : Ports.IProfileFinder
