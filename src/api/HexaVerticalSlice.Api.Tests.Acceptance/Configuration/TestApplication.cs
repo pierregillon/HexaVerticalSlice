@@ -8,7 +8,7 @@ namespace HexaVerticalSlice.Api.Tests.Acceptance.Configuration;
 public class TestApplication(IReqnrollOutputHelper specFlowOutputHelper)
     : TestApplicationBase(specFlowOutputHelper)
 {
-    protected override void OverrideAcceptanceServices(IServiceCollection services)
+    protected override void ConfigureServices(IServiceCollection services)
     {
         services.AddEntityFrameworkInMemory();
         services.AddSingleton(_ =>
@@ -17,17 +17,5 @@ public class TestApplication(IReqnrollOutputHelper specFlowOutputHelper)
             clock.Now().Returns(_ => DateTime.UtcNow);
             return clock;
         });
-    }
-
-    protected override void OverrideAcceptanceTestServices(IServiceCollection services)
-    {
-    }
-
-    protected override void OverrideIntegrationServices(IServiceCollection services)
-    {
-    }
-
-    protected override void OverrideIntegrationTestServices(IServiceCollection services)
-    {
     }
 }
