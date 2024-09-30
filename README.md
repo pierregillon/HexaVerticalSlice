@@ -1,21 +1,26 @@
-# HexaVerticalSlice
+# Hexa Vertical Slice
 
-This is a sample application that demonstrates how to combine hexagonal architecture and vertical slice architecture
+This is a sample application that demonstrates how to combine **Hexagonal Architecture** and **Vertical Slice Architecture**
 in order to benefit from both worlds.
 
-## Implemented patterns
+It is a simple WEB API in C# .NET.
 
+It is composed of several bounded contexts, inspired by the LinkedIn domain.
+
+Implemented patterns:
 - Hexagonal architecture
 - Vertical slice architecture
 - CQRS in memory
 - DDD tactical patterns
 
-### Benefits from Hexagonal architecture
+## Benefits from Hexagonal Architecture
 
-- The core domain is isolated from technical details
-- It does not depend on the infrastructure
+- The core domain is isolated from technical details by exposing Port
+- Infrastructure implements Adapter based on Port requirement
 
-### Benefits from vertical slice architecture
+[More about it](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software))
+
+## Benefits from Vertical Slice Architecture
 
 - Every use case contains a whole slice of the application
   - Use case
@@ -26,30 +31,48 @@ in order to benefit from both worlds.
 
 - Shared infrastructure or business logic is centralized in the bounded context
 
-### Benefits from DDD tactical patterns
+[More about it](https://www.jimmybogard.com/vertical-slice-architecture/)
 
-- The domain is split into bounded contexts in order to handle the complexity
-- Entities and value objects helps to model the domain
-- 
-## Context
+## Benefits from DDD tactical patterns
 
-The project is a Web API.
-It is composed of several bounded contexts, inspired by the LinkedIn domain.
+- The domain is modeled into bounded contexts in order to handle the its complexity
+- Entities and value objects helps to model the business rules and invariants
 
-## Bounded contexts
+[More about it](https://github.com/ddd-crew/ddd-starter-modelling-process?tab=readme-ov-file#tools-6)
 
-### Networking : Core domain
+## Criticism of this approach
+
+### Advantages
+
+✅ Business logic isolated from technical code
+
+✅ What changes together is in the same place
+
+✅ One project per bounded context
+
+### Disavantages
+
+❌ No physical separation: extremely easy to create a dependency between a business class and an infrastructure class
+
+❌ Duplication of ports by use case: if two use cases need an “IPasswordHasher”, each will have its own port
+
+## Bounded context introduction
+
+### Networking : Core subdomain
 
 This bounded context is responsible for invitations and connections between profiles.
+
 Its aims is to provide a way to connect with other users.
 
-### FeedComputation : Core domain
+### FeedComputation : Core subdomain
 
 This bounded context is responsible for the feed computation.
-Its aims is to provide a way to compute a feed from profile connections and published posts.
+
+Its aims is to compute a feed from profile connections and published posts.
 
 ### AccountManagement : Generic subdomain
 
 This bounded context is responsible for user registration and login.
-It handles the user account and the authentication.
+
+It handles the user accounts and the authentication.
 
