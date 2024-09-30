@@ -26,12 +26,11 @@ public class AccountManagementController(ICommandDispatcher commandDispatcher)
             EmailAddress.Create(body.Email),
             Password.Create(body.Password)
         );
-        
+
         var token = await commandDispatcher.Dispatch(command);
 
         return Ok(token);
     }
-    
-    public record RegisterUserControllerBody(string Email, string Password);
 
+    public record RegisterUserControllerBody(string Email, string Password);
 }

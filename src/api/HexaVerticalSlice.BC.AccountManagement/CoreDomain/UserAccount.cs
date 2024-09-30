@@ -8,7 +8,8 @@ public class UserAccount : AggregateRoot<UserAccountId>
     private UserAccount(
         UserAccountId accountId,
         EmailAddress emailAddress,
-        PasswordHash passwordHashHash) : base(accountId)
+        PasswordHash passwordHashHash
+    ) : base(accountId)
     {
         EmailAddress = emailAddress;
         PasswordHash = passwordHashHash;
@@ -34,6 +35,7 @@ public class UserAccount : AggregateRoot<UserAccountId>
     public static UserAccount Rehydrate(
         UserAccountId accountId,
         EmailAddress emailAddress,
-        PasswordHash passwordHash) =>
+        PasswordHash passwordHash
+    ) =>
         new(accountId, emailAddress, passwordHash);
 }

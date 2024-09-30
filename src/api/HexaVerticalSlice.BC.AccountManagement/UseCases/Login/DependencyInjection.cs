@@ -1,5 +1,4 @@
-﻿using HexaVerticalSlice.BC.AccountManagement.Infra.Hasher;
-using HexaVerticalSlice.BC.AccountManagement.Infra.TokenGeneration;
+﻿using HexaVerticalSlice.BC.AccountManagement.Infra.TokenGeneration;
 using HexaVerticalSlice.BC.AccountManagement.UseCases.Login.Adapters;
 using HexaVerticalSlice.BC.AccountManagement.UseCases.Login.Ports;
 
@@ -11,5 +10,5 @@ public static class DependencyInjection
         services
             .AddTransient<IUserFinder, FromDatabaseUserFinder>()
             .AddTransient<IJwtTokenGenerator, JwtTokenGenerator>()
-            .AddTransient<IPasswordHashVerifier, AspNetCoreIdentityPasswordHasher>();
+            .AddTransient<IPasswordHashVerifier, AspNetCoreIdentityPasswordHashVerifier>();
 }

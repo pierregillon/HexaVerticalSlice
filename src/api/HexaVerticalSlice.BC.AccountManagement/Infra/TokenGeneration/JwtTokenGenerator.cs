@@ -1,7 +1,6 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using HexaVerticalSlice.Api.BuildingBlocks;
 using HexaVerticalSlice.Api.BuildingBlocks.Time;
 using HexaVerticalSlice.BC.AccountManagement.CoreDomain;
 using HexaVerticalSlice.BC.AccountManagement.UseCases.Login.Ports;
@@ -10,10 +9,10 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace HexaVerticalSlice.BC.AccountManagement.Infra.TokenGeneration;
 
-internal class JwtTokenGenerator(IOptions<JwtBearerTokenOptions> options, IClock clock) 
-    : 
-        IJwtTokenGenerator, 
-        UseCases.Register.Ports.IJwtTokenGenerator
+internal class JwtTokenGenerator(
+    IOptions<JwtBearerTokenOptions> options,
+    IClock clock
+) : IJwtTokenGenerator, UseCases.Register.Ports.IJwtTokenGenerator
 {
     private readonly JwtBearerTokenOptions _options = options.Value;
 

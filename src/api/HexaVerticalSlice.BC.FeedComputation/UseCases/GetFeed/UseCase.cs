@@ -1,10 +1,12 @@
 using HexaVerticalSlice.BC.Feeds.Infra.Database;
+using HexaVerticalSlice.BC.Feeds.UseCases.GetFeed.Ports;
 using HexaVerticalSlice.BC.Networking.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace HexaVerticalSlice.BC.Feeds.UseCases.GetFeed;
 
 public class GetFeedUseCase(FeedComputationDbContext dbContext, IProfileFinder profileFinder)
+    : IGetFeedUseCase
 {
     public async Task<FeedDto> Execute()
     {

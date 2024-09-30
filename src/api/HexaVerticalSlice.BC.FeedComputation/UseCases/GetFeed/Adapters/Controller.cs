@@ -1,13 +1,14 @@
+using HexaVerticalSlice.BC.Feeds.UseCases.GetFeed.Ports;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HexaVerticalSlice.BC.Feeds.UseCases.GetFeed;
+namespace HexaVerticalSlice.BC.Feeds.UseCases.GetFeed.Adapters;
 
 [Authorize]
 [ApiController]
 [Route("feed-computation/v1/feed")]
 [Produces("application/json")]
-public class FeedComputationController(GetFeedUseCase useCase)
+public class FeedComputationController(IGetFeedUseCase useCase)
     : ControllerBase
 {
     [HttpGet]

@@ -1,4 +1,4 @@
-namespace HexaVerticalSlice.BC.Feeds.UseCases.GetFeed;
+namespace HexaVerticalSlice.BC.Feeds.UseCases.GetFeed.Ports;
 
 public record FeedDto(IReadOnlyCollection<FeedDto.PostDto> Posts)
 {

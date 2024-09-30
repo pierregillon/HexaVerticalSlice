@@ -18,10 +18,10 @@ public class AccountManagementController(IQueryDispatcher queryDispatcher)
     public async Task<IActionResult> LogIn([FromBody] ControllerModel controllerModel)
     {
         var query = new LogInUserQuery(
-            EmailAddress.Create(controllerModel.Email), 
+            EmailAddress.Create(controllerModel.Email),
             new UnverifiedPassword(controllerModel.Password)
         );
-        
+
         var token = await queryDispatcher.Dispatch(query);
 
         return Ok(token);

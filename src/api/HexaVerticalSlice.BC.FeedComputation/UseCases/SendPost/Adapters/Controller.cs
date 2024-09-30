@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
-using HexaVerticalSlice.BC.Feeds.UseCases.GetFeed;
+using HexaVerticalSlice.BC.Feeds.UseCases.GetFeed.Ports;
+using HexaVerticalSlice.BC.Feeds.UseCases.SendPost.Ports;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,7 +9,7 @@ namespace HexaVerticalSlice.BC.Feeds.UseCases.SendPost.Adapters;
 [Authorize]
 [ApiController]
 [Produces("application/json")]
-public class FeedComputationController(SendPostUseCase useCase)
+public class FeedComputationController(ISendPostUseCase useCase)
     : ControllerBase
 {
     [HttpPost("feed-computation/v1/posts/")]

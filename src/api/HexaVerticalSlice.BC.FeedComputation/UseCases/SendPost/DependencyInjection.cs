@@ -7,6 +7,6 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddSendPostUseCase(this IServiceCollection services) =>
         services
-            .AddTransient<SendPostUseCase>()
-            .AddTransient<IProfileFinder, ExternalProfileFinder>();
+            .AddTransient<ISendPostUseCase, SendPostUseCase>()
+            .AddTransient<IProfileFinder, FromNetworkingBoundedContextProfileFinder>();
 }

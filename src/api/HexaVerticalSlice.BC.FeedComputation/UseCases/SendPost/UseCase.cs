@@ -11,7 +11,7 @@ public class SendPostUseCase(
     IProfileFinder profileFinder,
     IClock clock,
     ICurrentTenant currentTenant
-)
+) : ISendPostUseCase
 {
     public async Task SendPost(string title, string content)
     {

@@ -18,7 +18,7 @@ internal class LogInUserQueryHandler(
         {
             throw new LoginFailedException("Incorrect user or password");
         }
-            
+
         return generator.Generate(user.Id, user.EmailAddress);
     }
 }

@@ -12,7 +12,7 @@ public static class DependencyInjection
             .BindConfiguration(DatabaseConfiguration.Section)
             .ValidateDataAnnotations()
             ;
-        
+
         services
             .AddScoped<IUserAccountRepository, SqlUserAccountRepository>()
             .AddDbContext<AccountManagementDbContext>((sp, options) =>
