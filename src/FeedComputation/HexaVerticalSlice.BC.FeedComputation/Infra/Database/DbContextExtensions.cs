@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Options;
 
-namespace HexaVerticalSlice.BC.Feeds.Infra.Database;
+namespace HexaVerticalSlice.BC.FeedComputation.Infra.Database;
 
 internal static class DbContextExtensions
 {

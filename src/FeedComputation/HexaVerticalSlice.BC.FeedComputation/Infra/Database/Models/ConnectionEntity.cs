@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HexaVerticalSlice.BC.Feeds.Infra.Models;
+namespace HexaVerticalSlice.BC.FeedComputation.Infra.Database.Models;
 
 [Table("Connection")]
 public class ConnectionEntity

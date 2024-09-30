@@ -1,7 +1,10 @@
-using HexaVerticalSlice.BC.Feeds.UseCases.GetFeed;
-using HexaVerticalSlice.BC.Feeds.UseCases.PublishPost;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.GetFeed;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.GetPostDetails;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.ListPosts;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.PublishPost;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.StartThread;
 
-namespace HexaVerticalSlice.BC.Feeds.UseCases;
+namespace HexaVerticalSlice.BC.FeedComputation.UseCases;
 
 public static class DependencyInjection
 {
@@ -10,6 +13,9 @@ public static class DependencyInjection
         services
             .AddGetFeedUseCase()
             .AddSendPostUseCase()
+            .AddListPostsUseCase()
+            .AddGetPostDetailsUseCase()
+            .AddStartThreadUseCase()
             ;
 
         return services;

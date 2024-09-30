@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace HexaVerticalSlice.BC.Feeds.Infra.Database;
+namespace HexaVerticalSlice.BC.FeedComputation.Infra.Database;
 
 public class DatabaseConfiguration
 {

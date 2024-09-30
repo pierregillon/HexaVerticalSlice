@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
 using HexaVerticalSlice.Api.BuildingBlocks.Events;
-using HexaVerticalSlice.BC.Feeds.Infra;
-using HexaVerticalSlice.BC.Feeds.UseCases;
+using HexaVerticalSlice.BC.FeedComputation.Infra;
+using HexaVerticalSlice.BC.FeedComputation.UseCases;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
-namespace HexaVerticalSlice.BC.Feeds;
+namespace HexaVerticalSlice.BC.FeedComputation;
 
 public static class DependencyInjection
 {

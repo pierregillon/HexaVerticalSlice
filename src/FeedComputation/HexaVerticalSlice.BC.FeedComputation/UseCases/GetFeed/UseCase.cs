@@ -1,9 +1,9 @@
-using HexaVerticalSlice.BC.Feeds.Infra.Database;
-using HexaVerticalSlice.BC.Feeds.UseCases.GetFeed.Ports;
+using HexaVerticalSlice.BC.FeedComputation.Infra.Database;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.GetFeed.Ports;
 using HexaVerticalSlice.BC.Networking.Contracts;
 using Microsoft.EntityFrameworkCore;
 
-namespace HexaVerticalSlice.BC.Feeds.UseCases.GetFeed;
+namespace HexaVerticalSlice.BC.FeedComputation.UseCases.GetFeed;
 
 public class GetFeedUseCase(FeedComputationDbContext dbContext, IProfileFinder profileFinder)
     : IGetFeedUseCase

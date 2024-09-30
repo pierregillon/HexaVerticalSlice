@@ -1,10 +1,10 @@
 using HexaVerticalSlice.Api.BuildingBlocks.Events;
-using HexaVerticalSlice.BC.Feeds.Infra.Database;
-using HexaVerticalSlice.BC.Feeds.Infra.Models;
+using HexaVerticalSlice.BC.FeedComputation.Infra.Database;
+using HexaVerticalSlice.BC.FeedComputation.Infra.Database.Models;
 using HexaVerticalSlice.BC.Networking.Contracts;
 using Microsoft.EntityFrameworkCore;
 
-namespace HexaVerticalSlice.BC.Feeds.SideEffects.AddContactOnProfileConnected;
+namespace HexaVerticalSlice.BC.FeedComputation.SideEffects.AddContactOnProfileConnected;
 
 public class Listener(FeedComputationDbContext dbContext) : IIntegrationEventListener<ProfileConnectedIntegrationEvent>
 {
@@ -15,16 +15,18 @@ public class Listener(FeedComputationDbContext dbContext) : IIntegrationEventLis
                 x.UserId == integrationEvent.UserId && x.ConnectedUserId == integrationEvent.ConnectedUserId
             );
 
-        if (contact is null)
+        if (contact is not null)
         {
-            await dbContext.Connections.AddAsync(
-                new ConnectionEntity
-                {
-                    UserId = integrationEvent.UserId,
-                    ProfileId = integrationEvent.ProfileId,
-                    ConnectedUserId = integrationEvent.ConnectedUserId
-                }
-            );
+            return;
         }
+
+        await dbContext.Connections.AddAsync(
+            new ConnectionEntity
+            {
+                UserId = integrationEvent.UserId,
+                ProfileId = integrationEvent.ProfileId,
+                ConnectedUserId = integrationEvent.ConnectedUserId
+            }
+        );
     }
 }

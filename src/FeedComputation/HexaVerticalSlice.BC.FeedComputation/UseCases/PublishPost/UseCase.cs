@@ -1,10 +1,10 @@
 using HexaVerticalSlice.Api.BuildingBlocks.Tenant;
 using HexaVerticalSlice.Api.BuildingBlocks.Time;
-using HexaVerticalSlice.BC.Feeds.Infra.Database;
-using HexaVerticalSlice.BC.Feeds.Infra.Database.Models;
-using HexaVerticalSlice.BC.Feeds.UseCases.PublishPost.Ports;
+using HexaVerticalSlice.BC.FeedComputation.Infra.Database;
+using HexaVerticalSlice.BC.FeedComputation.Infra.Database.Models;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.PublishPost.Ports;
 
-namespace HexaVerticalSlice.BC.Feeds.UseCases.PublishPost;
+namespace HexaVerticalSlice.BC.FeedComputation.UseCases.PublishPost;
 
 public class PublishPostUseCase(
     FeedComputationDbContext dbContext,

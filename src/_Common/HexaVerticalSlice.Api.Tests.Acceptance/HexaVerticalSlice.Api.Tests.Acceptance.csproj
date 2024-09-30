@@ -98,6 +98,12 @@
             <DesignTime>true</DesignTime>
             <Visible>true</Visible>
         </Compile>
+        <Compile Update="BCs\FeedComputation\Features\CommentAPost.feature.cs">
+            <DependentUpon>CommentAPost.feature</DependentUpon>
+            <AutoGen>true</AutoGen>
+            <DesignTime>true</DesignTime>
+            <Visible>true</Visible>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>
@@ -107,6 +113,7 @@
     <ItemGroup>
         <Content Include="BCs\AccountManagement\Features\LoginToMyAccount.feature"/>
         <Content Include="BCs\AccountManagement\Features\RegisterNewUser.feature"/>
+        <Content Include="BCs\FeedComputation\Features\CommentAPost.feature"/>
         <Content Include="BCs\FeedComputation\Features\GetFeed.feature"/>
         <Content Include="BCs\Networking\Features\AcceptAnInvitation.feature"/>
         <Content Include="BCs\Networking\Features\ConsultProfile.feature"/>

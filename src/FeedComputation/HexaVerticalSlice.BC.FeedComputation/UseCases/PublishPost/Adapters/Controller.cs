@@ -1,10 +1,10 @@
 using System.ComponentModel.DataAnnotations;
-using HexaVerticalSlice.BC.Feeds.UseCases.GetFeed.Ports;
-using HexaVerticalSlice.BC.Feeds.UseCases.PublishPost.Ports;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.GetFeed.Ports;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.PublishPost.Ports;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HexaVerticalSlice.BC.Feeds.UseCases.PublishPost.Adapters;
+namespace HexaVerticalSlice.BC.FeedComputation.UseCases.PublishPost.Adapters;
 
 [Authorize]
 [ApiController]

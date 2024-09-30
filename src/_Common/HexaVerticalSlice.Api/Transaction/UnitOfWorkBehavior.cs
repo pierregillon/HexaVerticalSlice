@@ -1,6 +1,6 @@
 using System.Transactions;
 using HexaVerticalSlice.BC.AccountManagement.Infra.Database;
-using HexaVerticalSlice.BC.Feeds.Infra.Database;
+using HexaVerticalSlice.BC.FeedComputation.Infra.Database;
 using HexaVerticalSlice.BC.Networking.Infra.Database;
 using MediatR;
 

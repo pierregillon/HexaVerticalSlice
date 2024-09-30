@@ -1,4 +1,4 @@
-﻿namespace HexaVerticalSlice.BC.Feeds;
+﻿namespace HexaVerticalSlice.BC.FeedComputation;
 
 public class Program
 {

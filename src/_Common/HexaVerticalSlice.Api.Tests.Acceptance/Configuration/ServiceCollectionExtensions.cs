@@ -1,5 +1,5 @@
 ﻿using HexaVerticalSlice.BC.AccountManagement.Infra.Database;
-using HexaVerticalSlice.BC.Feeds.Infra.Database;
+using HexaVerticalSlice.BC.FeedComputation.Infra.Database;
 using HexaVerticalSlice.BC.Networking.Infra.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;

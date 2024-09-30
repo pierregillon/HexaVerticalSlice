@@ -1,7 +1,7 @@
-using HexaVerticalSlice.BC.Feeds.Infra.Database;
+using HexaVerticalSlice.BC.FeedComputation.Infra.Database;
 using Microsoft.Extensions.Options;
 
-namespace HexaVerticalSlice.BC.Feeds.Infra;
+namespace HexaVerticalSlice.BC.FeedComputation.Infra;
 
 public static class DependencyInjection
 {

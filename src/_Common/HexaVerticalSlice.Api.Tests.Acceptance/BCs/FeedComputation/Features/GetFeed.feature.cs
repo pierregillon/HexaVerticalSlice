@@ -84,12 +84,12 @@ namespace HexaVerticalSlice.Api.Tests.Acceptance.BCs.FeedComputation.Features
 #line 7
     await testRunner.GivenAsync("I am registered and logged in as john@company.com", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-            global::Reqnroll.Table table10 = new global::Reqnroll.Table(new string[] {
+            global::Reqnroll.Table table13 = new global::Reqnroll.Table(new string[] {
                         "Email address"});
-            table10.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "emma@company.com"});
 #line 8
-    await testRunner.AndAsync("I connected the following users", ((string)(null)), table10, "And ");
+    await testRunner.AndAsync("I connected the following users", ((string)(null)), table13, "And ");
 #line hidden
         }
         
@@ -159,24 +159,24 @@ await this.FeatureBackgroundAsync();
     await testRunner.GivenAsync("the current date is 2024-09-25", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 18
-    await testRunner.WhenAsync("emma@company.com posts a post with title \"My first post\" and content \"This is my " +
-                        "first post\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+    await testRunner.WhenAsync("emma@company.com publishes a post with title \"My first post\" and content \"This is" +
+                        " my first post\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 19
     await testRunner.AndAsync("I get my feed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table11 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table14 = new global::Reqnroll.Table(new string[] {
                             "Author",
                             "Date",
                             "Title",
                             "Content"});
-                table11.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "emma@company.com",
                             "2024-09-25",
                             "My first post",
                             "This is my first post"});
 #line 20
-    await testRunner.ThenAsync("my feed contains the following posts:", ((string)(null)), table11, "Then ");
+    await testRunner.ThenAsync("my feed contains the following posts:", ((string)(null)), table14, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -203,38 +203,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 await this.FeatureBackgroundAsync();
 #line hidden
-                global::Reqnroll.Table table12 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table15 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
-                table12.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "sam@company.com"});
 #line 25
-    await testRunner.GivenAsync("I connected the following users", ((string)(null)), table12, "Given ");
+    await testRunner.GivenAsync("I connected the following users", ((string)(null)), table15, "Given ");
 #line hidden
 #line 28
-    await testRunner.WhenAsync("emma@company.com posts a post with title \"My first post\" and content \"This is my " +
-                        "first post\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+    await testRunner.WhenAsync("emma@company.com publishes a post with title \"My first post\" and content \"This is" +
+                        " my first post\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 29
-    await testRunner.AndAsync("sam@company.com posts a post with title \"New post\" and content \"This is a new pos" +
-                        "t\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+    await testRunner.AndAsync("sam@company.com publishes a post with title \"New post\" and content \"This is a new" +
+                        " post\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 30
     await testRunner.AndAsync("I get my feed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table13 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table16 = new global::Reqnroll.Table(new string[] {
                             "Author",
                             "Title",
                             "Content"});
-                table13.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "sam@company.com",
                             "New post",
                             "This is a new post"});
-                table13.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "emma@company.com",
                             "My first post",
                             "This is my first post"});
 #line 31
-    await testRunner.ThenAsync("my feed contains the following posts:", ((string)(null)), table13, "Then ");
+    await testRunner.ThenAsync("my feed contains the following posts:", ((string)(null)), table16, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

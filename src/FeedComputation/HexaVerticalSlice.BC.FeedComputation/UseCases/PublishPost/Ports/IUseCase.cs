@@ -1,4 +1,4 @@
-namespace HexaVerticalSlice.BC.Feeds.UseCases.PublishPost.Ports;
+namespace HexaVerticalSlice.BC.FeedComputation.UseCases.PublishPost.Ports;
 
 public interface IPublishPostUseCase
 {

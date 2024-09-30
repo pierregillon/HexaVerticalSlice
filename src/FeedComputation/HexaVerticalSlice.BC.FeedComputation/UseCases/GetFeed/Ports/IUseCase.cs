@@ -1,4 +1,4 @@
-namespace HexaVerticalSlice.BC.Feeds.UseCases.GetFeed.Ports;
+namespace HexaVerticalSlice.BC.FeedComputation.UseCases.GetFeed.Ports;
 
 public interface IGetFeedUseCase
 {

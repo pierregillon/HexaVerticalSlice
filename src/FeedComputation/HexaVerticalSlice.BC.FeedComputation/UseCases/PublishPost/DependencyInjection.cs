@@ -1,7 +1,7 @@
-using HexaVerticalSlice.BC.Feeds.UseCases.PublishPost.Adapters;
-using HexaVerticalSlice.BC.Feeds.UseCases.PublishPost.Ports;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.PublishPost.Adapters;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.PublishPost.Ports;
 
-namespace HexaVerticalSlice.BC.Feeds.UseCases.PublishPost;
+namespace HexaVerticalSlice.BC.FeedComputation.UseCases.PublishPost;
 
 public static class DependencyInjection
 {

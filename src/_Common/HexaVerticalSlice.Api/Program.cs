@@ -1,6 +1,6 @@
 using HexaVerticalSlice.Api.BuildingBlocks.Tenant;
 using HexaVerticalSlice.BC.AccountManagement;
-using HexaVerticalSlice.BC.Feeds;
+using HexaVerticalSlice.BC.FeedComputation;
 using HexaVerticalSlice.BC.Networking;
 using HexaVerticalSlice.Configuration.Authentication;
 using HexaVerticalSlice.Configuration.Controllers;

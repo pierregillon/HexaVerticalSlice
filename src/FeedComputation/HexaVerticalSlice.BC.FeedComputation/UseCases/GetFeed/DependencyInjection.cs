@@ -1,6 +1,6 @@
-using HexaVerticalSlice.BC.Feeds.UseCases.GetFeed.Ports;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.GetFeed.Ports;
 
-namespace HexaVerticalSlice.BC.Feeds.UseCases.GetFeed;
+namespace HexaVerticalSlice.BC.FeedComputation.UseCases.GetFeed;
 
 public static class DependencyInjection
 {

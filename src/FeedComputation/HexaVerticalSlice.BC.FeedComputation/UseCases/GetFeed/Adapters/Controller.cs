@@ -1,8 +1,8 @@
-using HexaVerticalSlice.BC.Feeds.UseCases.GetFeed.Ports;
+using HexaVerticalSlice.BC.FeedComputation.UseCases.GetFeed.Ports;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HexaVerticalSlice.BC.Feeds.UseCases.GetFeed.Adapters;
+namespace HexaVerticalSlice.BC.FeedComputation.UseCases.GetFeed.Adapters;
 
 [Authorize]
 [ApiController]

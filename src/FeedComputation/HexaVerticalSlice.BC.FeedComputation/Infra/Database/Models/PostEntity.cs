@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HexaVerticalSlice.BC.Feeds.Infra.Database.Models;
+namespace HexaVerticalSlice.BC.FeedComputation.Infra.Database.Models;
 
 [Table("Post")]
 public class PostEntity
@@ -12,4 +12,5 @@ public class PostEntity
     public Guid ProfileId { get; set; }
     public DateTime PublishDate { get; set; }
     public Guid UserId { get; set; }
+    public virtual ICollection<ThreadEntity> Threads { get; set; } = default!;
 }
